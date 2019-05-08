@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 7, 2019, 8:47:21 PM
+    Author     : hskodama
+*/
+body {
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+}
+ 
+.nav {
+    width: 100%;
+    background-color: #fdfdfd;
+    min-width: 800px;
+}
+
+.nav ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.0em;
+    color:  #303030;
+    width: calc(100% / 6);
+    box-sizing: border-box;
+}
+ 
+.nav a {
+    text-decoration: none;
+    color:  #303030;
+    display: block;
+    transition: .3s background-color;
+    padding: 16px;
+}
+ 
+.nav a:hover {
+    background-color: #006606;
+    color: #fdfdfd;
+}
+ 
+.nav a.active {
+    background-color: #006606;
+    color: #fdfdfd;
+    cursor: default;
+}
+
+.titulo {
+    width: 65%;
+    height: 50%;
+    font-weight: normal;
+    background-color: #006606;
+    color: #fdfdfd;
+    float: right;;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 6em;
+    padding: 0.5em;
+    min-width: 600px;
+}
+ 
