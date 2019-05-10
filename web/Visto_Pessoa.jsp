@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Imigrantes</title>
         <link rel="stylesheet" href="/bootstrap-4.0.0-dist/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="style2.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="nav">
