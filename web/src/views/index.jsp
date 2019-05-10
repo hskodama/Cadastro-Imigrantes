@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Imigrantes</title>
-        <link rel="stylesheet" href="/bootstrap-4.0.0-dist/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -26,6 +26,6 @@
         </div>
         
         <h1 class="titulo">Cadastro de Estrangeiros</h1>
-    	<script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+    	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
     </body>
 </html>
