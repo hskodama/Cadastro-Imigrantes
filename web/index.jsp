@@ -15,12 +15,12 @@
     <body>
         <div class="nav">
             <ul>
-                <li class="Home"><a href="#">Home</a></li>
+                <li class="Home"><a href="index.jsp">Home</a></li>
                 <li class="Pessoas"><a href="#">Pessoas</a></li>
                 <li class="Vistos"><a href="#">Vistos</a></li>
                 <li class="TipoVistos"><a href="#">Tipo de Vistos</a></li>
                 <li class="Pesquisas"><a href="#">Pesquisas</a></li>
-                <li class="Visualizacao"><a href="#">Visualização</a></li>
+                <li class="Visualizacao"><a href="Visto_Pessoa.jsp">Visualização</a></li>
             </ul>
         </div>
         
