@@ -19,9 +19,9 @@
                 <li class="Visualizacao"><a href="#">Visualização</a></li>
             </ul>
         </div>
-        <section class="container">
-            <div class="item"><%-- Visto --%>
-                <section id="visto">
+        <section class="container" id="Cont-Vis-Pess">
+            <div class="item" style="width: 33%;"><%-- Visto --%>
+                <section class="item" id="visto">
                     <div id="foto">
                         
                     </div>
@@ -32,9 +32,38 @@
                         <li >Data de Expedição:</li>
                         <li >Data de Expiração:</li>
                     </ul>
+                    <div class="container">
+                        <div style="width: 79%">
+                        </div>
+                        <h2 id="text-visto">
+                            Visto
+                        </h2>
+                    </div>
+
+
                 </section>
             </div>
-            <div class="item"><%-- Pessoa --%>
+            <div class="item container" id="infoPessoa"><%-- Pessoa --%>
+                <ul class="info">
+                    <li >Nome: </li>
+                    <li >Nome da Mãe: </li>
+                    <li >Estado Residente:</li>
+                    <li >Data de Expedição:</li>
+                    <li >Orgão Emissor:</li>
+                </ul>
+                <div id="chaveIMG">
+                </div>
+                <div id="pessoaIMG">
+                </div>
+                <div id="chaveIMG" style="transform: rotateY(180deg);">
+                </div>
+                <ul class="info">
+                    <li >RNE: </li>
+                    <li >Nome do Pai: </li>
+                    <li >Nacionalidade:</li>
+                    <li >Passaporte:</li>
+                    <li >Data de Expiração:</li>
+                </ul>
             </div>
         </section>
     </body>

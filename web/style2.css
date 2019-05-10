@@ -70,21 +70,24 @@ body {
 }
 .container {
     display: flex;
+}
+#Cont-Vis-Pess{
     position: relative;
     top: 50px;
 }
 
 .item {
-    flex: 1;
     text-align: center;
     border: 1px solid #ccc;
     margin: 5px;
+    background-color: #EFF;
+    border-radius: 25px;
 }
 #visto{
-    border: 1px solid #ccc;
-    margin: 5px;
+    border-color: #999;
     padding-left: 25px;
     padding-top: 10px;
+    background-color: #7D7;
  }
 #foto{
     width:100px;
@@ -100,4 +103,32 @@ body {
 }
 .info li{
     margin-bottom: 20px;
+}
+
+#pessoaIMG{
+    width: 200px;
+    height: 400px;
+    margin-left: 30px;
+    background-image: url("pessoa.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#infoPessoa{
+    flex: 1; 
+    top: 0; 
+    align-items: center;
+    justify-content: center
+}
+#text-visto{
+    transform: rotate(-30deg);
+    text-align: right;
+    width: 80px;
+}
+
+#chaveIMG{
+    width: 50px;
+    height: 400px;
+    background-image: url("chave.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
