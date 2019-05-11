@@ -15,7 +15,7 @@ body {
  
 .nav {
     width: 100%;
-    background-color: #eff;
+    background-color: #282828;
     min-width: 800px;
 }
 
@@ -38,10 +38,12 @@ body {
  
 .nav a {
     text-decoration: none;
-    color:  #303030;
+    color: #fff;
     display: block;
     transition: .3s background-color;
     padding: 16px;
+    width: 16.6%;
+    text-align: center;
 }
  
 .nav a:hover {
@@ -85,8 +87,8 @@ body {
 }
 #visto{
     border-color: #999;
+    padding: 10px;
     padding-left: 25px;
-    padding-top: 10px;
     background-color: #7D7;
  }
 #foto{
@@ -95,6 +97,7 @@ body {
     border: 1px solid #ccc;
     background-image: url("rsc/avatar.png");
     background-size: cover;
+    margin-bottom: 10px;
 }
 .info{
     text-align: left;
@@ -109,15 +112,16 @@ body {
     width: 200px;
     height: 400px;
     margin-left: 30px;
-    background-image: url("rsc/pessoa.png");
-    background-size: contain;
+    background-image: url("rsc/chaves.svg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 #infoPessoa{
     flex: 1; 
     top: 0; 
     align-items: center;
-    justify-content: center
+    justify-content: center 
 }
 #text-visto{
     transform: rotate(-30deg);
@@ -128,7 +132,8 @@ body {
 #chaveIMG{
     width: 50px;
     height: 400px;
-    background-image: url("rsc/chave.png");
+    background-image: url("rsc/pessoa.svg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }

@@ -6,20 +6,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Imigrantes</title>
-        <link rel="stylesheet" href="/bootstrap-4.0.0-dist/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="nav">
-            <ul>
-                <li class="Home"><a href="index.jsp">Home</a></li>
-                <li class="Pessoas"><a href="#">Pessoas</a></li>
-                <li class="Vistos"><a href="#">Vistos</a></li>
-                <li class="TipoVistos"><a href="#">Tipo de Vistos</a></li>
-                <li class="Pesquisas"><a href="#">Pesquisas</a></li>
-                <li class="Visualizacao"><a href="#">Visualização</a></li>
-            </ul>
-        </div>
+        <nav class="navbar nav">
+            <a class="nav-link" href="index.jsp">Home</a>
+            <a class="nav-link" href="#">Pessoas</a>
+            <a class="nav-link" href="#">Vistos</a>
+            <a class="nav-link" href="#">Tipos de Vistos</a>
+            <a class="nav-link" href="#">Pesquisas</a>
+            <a class="nav-link" href="Visto_Pessoa.jsp">Vizualização</a> 
+        </nav>
         <section class="container" id="Cont-Vis-Pess">
             <div class="item" style="width: 33%;"><%-- Visto --%>
                 <section class="item" id="visto">
@@ -67,6 +65,6 @@
                 </ul>
             </div>
         </section>
-        <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+        <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
     </body>
 </html>
