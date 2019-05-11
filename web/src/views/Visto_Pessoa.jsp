@@ -18,11 +18,10 @@
             <a class="nav-link" href="#">Pesquisas</a>
             <a class="nav-link" href="Visto_Pessoa.jsp">Vizualização</a> 
         </nav>
-        <section class="container" id="Cont-Vis-Pess">
+        <section class="container w-100 p-3" id="Cont-Vis-Pess">
             <div class="item" style="width: 33%;"><%-- Visto --%>
                 <section class="item" id="visto">
                     <div id="foto">
-                        
                     </div>
                     <ul class="info">
                         <li >RNE: </li>
@@ -42,7 +41,7 @@
 
                 </section>
             </div>
-            <div class="item container" id="infoPessoa"><%-- Pessoa --%>
+            <div class="item container w-100 p-3" id="infoPessoa"><%-- Pessoa --%>
                 <ul class="info">
                     <li >Nome: </li>
                     <li >Nome da Mãe: </li>
@@ -50,11 +49,13 @@
                     <li >Data de Expedição:</li>
                     <li >Orgão Emissor:</li>
                 </ul>
-                <div id="chaveIMG">
-                </div>
-                <div id="pessoaIMG">
-                </div>
-                <div id="chaveIMG" style="transform: rotateY(180deg);">
+                <div class="container center">
+                    <div id="chaveIMG"style="transform: rotateY(180deg); ">
+                    </div>
+                    <div id="pessoaIMG">
+                    </div>
+                    <div id="chaveIMG">
+                    </div>
                 </div>
                 <ul class="info">
                     <li >RNE: </li>

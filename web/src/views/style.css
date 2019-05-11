@@ -72,10 +72,15 @@ body {
 }
 .container {
     display: flex;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center
 }
 #Cont-Vis-Pess{
     position: relative;
+    max-width: 95%;
     top: 50px;
+    margin-left: 20px;
 }
 
 .item {
@@ -84,12 +89,13 @@ body {
     margin: 5px;
     background-color: #EFF;
     border-radius: 25px;
+    position: relative;
 }
 #visto{
     border-color: #999;
     padding: 10px;
     padding-left: 25px;
-    background-color: #7D7;
+    background-color: #9D9;
  }
 #foto{
     width:100px;
@@ -97,12 +103,14 @@ body {
     border: 1px solid #ccc;
     background-image: url("rsc/avatar.png");
     background-size: cover;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px grey;
 }
 .info{
     text-align: left;
     list-style-type: none; 
     padding-left: 0px;
+    width: 100%;
 }
 .info li{
     margin-bottom: 20px;
@@ -111,17 +119,13 @@ body {
 #pessoaIMG{
     width: 200px;
     height: 400px;
-    margin-left: 30px;
-    background-image: url("rsc/chaves.svg");
-    background-size: cover;
+    background-image: url("rsc/pessoa.svg");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 #infoPessoa{
-    flex: 1; 
-    top: 0; 
-    align-items: center;
-    justify-content: center 
+    justify-content: space-between;
 }
 #text-visto{
     transform: rotate(-30deg);
@@ -131,9 +135,9 @@ body {
 
 #chaveIMG{
     width: 50px;
-    height: 400px;
-    background-image: url("rsc/pessoa.svg");
-    background-size: cover;
+    height: 250px;
+    background-image: url("rsc/chave.svg");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
