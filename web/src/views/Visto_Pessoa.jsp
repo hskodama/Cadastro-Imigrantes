@@ -7,16 +7,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Imigrantes</title>
         <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
     </head>
     <body>
         <nav class="navbar nav">
             <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="#">Pessoas</a>
-            <a class="nav-link" href="#">Vistos</a>
+            <a class="nav-link" href="Pessoas.jsp">Pessoas</a>
+            <a class="nav-link" href="Vistos.jsp">Vistos</a>
             <a class="nav-link" href="#">Tipos de Vistos</a>
             <a class="nav-link" href="#">Pesquisas</a>
-            <a class="nav-link" href="Visto_Pessoa.jsp">Vizualização</a> 
+            <a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a> 
         </nav>
         <section class="container w-100 p-3" id="Cont-Vis-Pess">
             <div class="item" style="width: 33%;"><%-- Visto --%>

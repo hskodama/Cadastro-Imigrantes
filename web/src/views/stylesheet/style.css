@@ -51,7 +51,7 @@ body {
     color: #fdfdfd;
 }
  
-.nav a.active {
+.nav a:active {
     background-color: #006606;
     color: #fdfdfd;
     cursor: default;
@@ -141,3 +141,15 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/*Pessoas.jsp*/
+
+table {
+    margin: 5% auto;
+}
+
+tr:nth-child(even) {
+    background-color: silver;
+}
+
+/*Pessoas.jsp*/
