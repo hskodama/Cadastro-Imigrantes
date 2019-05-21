@@ -15,10 +15,10 @@
             <a class="nav-link" href="Pessoas.jsp">Pessoas</a>
             <a class="nav-link" href="Vistos.jsp">Vistos</a>
             <a class="nav-link" href="#">Tipos de Vistos</a>
-            <a class="nav-link" href="#">Pesquisas</a>
+            <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>
             <a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a> 
         </nav>
-        <section class="container w-100 p-3" id="Cont-Vis-Pess">
+        <section class="container cont w-100 p-3">
             <div class="item" style="width: 33%;"><%-- Visto --%>
                 <section class="item" id="visto">
                     <div id="foto">

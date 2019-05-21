@@ -19,7 +19,7 @@
             <a class="nav-link" href="Pessoas.jsp">Pessoas</a>
             <a class="nav-link" href="Vistos.jsp">Vistos</a>
             <a class="nav-link" href="#">Tipos de Vistos</a>
-            <a class="nav-link" href="#">Pesquisas</a>
+            <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>
             <a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a> 
         </nav>
 
