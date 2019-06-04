@@ -26,7 +26,7 @@
                     <a class="nav-link" href="Vistos.jsp">Vistos</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#">Tipos de Vistos</a>
+                    <a class="nav-link" href="Tipo_Visto.jsp">Tipos de Vistos</a>
                 </li>
                 <li>
                     <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>

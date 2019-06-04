@@ -16,10 +16,10 @@
     <body>
         <nav class="navbar nav">
             <ul>
-                <li><a class="active" href="index.jsp">Home</a></li>
+                <li><a class="active_menu" href="index.jsp">Home</a></li>
                 <li><a class="nav-link" href="Pessoas.jsp">Pessoas</a></li>
                 <li><a class="nav-link" href="Vistos.jsp">Vistos</a></li>
-                <li><a class="nav-link" href="#">Tipos de Vistos</a></li>
+                <li><a class="nav-link" href="Tipo_Visto.jsp">Tipos de Vistos</a></li>
                 <li><a class="nav-link" href="Pesquisa.jsp">Pesquisas</a></li>
                 <li><a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a></li>
             </ul>

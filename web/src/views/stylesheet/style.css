@@ -51,7 +51,7 @@ body {
     color: #fdfdfd;
 }
  
-.active {
+.active_menu{
     background-color: #006606;
     color: #fdfdfd;
     cursor: default;
@@ -191,3 +191,42 @@ select{
     margin-left: 5px;
 }
 /*Consulta.jsp*/
+
+
+/*Tipo_Visto.jsp*/
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #006606;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.tipo_margin{
+    padding-top: 0px;
+    padding-right: 40px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+}
+
+.tipo_margin_aninhado{
+    position: 
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+}
