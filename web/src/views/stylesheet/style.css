@@ -8,7 +8,9 @@ and open the template in the editor.
     Author     : hskodama
 */
 body {
-    margin: 0;
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
     padding: 0;
     background: #fdfdfd;
 }
@@ -17,6 +19,8 @@ body {
     width: 100%;
     background-color: #282828;
     min-width: 800px;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; 
 }
 
 .nav ul {
@@ -57,19 +61,6 @@ body {
     cursor: default;
 }
 
-.titulo {
-    width: 65%;
-    height: 50%;
-    font-weight: normal;
-    background-color: #006606;
-    color: #fdfdfd;
-    float: right;;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 6em;
-    padding: 0.5em;
-    min-width: 600px;
-}
 .container {
     display: flex;
     margin-right: 0;
@@ -195,38 +186,138 @@ select{
 
 /*Tipo_Visto.jsp*/
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: #dbd2e9;
+  color: #4e3d42;
   cursor: pointer;
   padding: 18px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 18px;
+  border-radius: 10px;
 }
 
 .active, .collapsible:hover {
   background-color: #006606;
+  transition: .3s background-color;
+  color: white;
 }
 
 .content {
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  font-family: 'Oswald', sans-serif;
 }
 
 .tipo_margin{
     padding-top: 0px;
-    padding-right: 40px;
+    padding-right: 60px;
     padding-bottom: 15px;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 
 .tipo_margin_aninhado{
-    position: 
-    padding-top: 0px;
+    padding-top: 10px;
     padding-right: 0px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     padding-left: 40px;
+}
+
+.collapsible:after {
+  content: '+   '; /* Unicode character for "plus" sign (+) */
+  font-size: inherit;
+  color: inherit;
+  float: right;
+  padding-right: 50px;
+}
+
+.collapsible.active:after {
+  content: "-"; /* Unicode character for "minus" sign (-) */
+  color: inherit;
+}
+
+/*index.jsp*/
+.Intro{
+    width:100%;
+    
+}
+.titulo {
+    margin-left: 400px;
+    font-weight: normal;
+    background-color: #006606;
+    color: #fdfdfd;
+    float: right;;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 6em;
+    padding:80px 20px 80px 20px;
+}
+
+.Pessoas{
+    padding-top: 600px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Pessoas p{
+    font-size: 70px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.Pessoas h2{
+    font-size: 50px;
+}
+
+.Pessoas h3{
+    font-weight: lighter;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.Tipo_Visto{
+    font-family: 'Oswald', sans-serif;
+    padding-top: 50px;
+    padding-left: 200px;
+    text-align: center;
+}
+
+.Tipo_Visto h2{
+    font-size: 50px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+.Tipo_Visto h3{
+    font-weight: lighter;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.Mapas{
+    font-family: 'Oswald', sans-serif;
+    padding-right: 200px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.Mapas h2{
+    font-size: 50px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+.Mapax_Texto{
+    font-weight: lighter;
+    margin-top: 0;
+    font-size: 20px;
+    width: 50%;
+    display: inline-block;
 }
