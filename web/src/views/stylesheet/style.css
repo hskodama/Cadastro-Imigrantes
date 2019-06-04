@@ -42,7 +42,7 @@ body {
     display: block;
     transition: .3s background-color;
     padding: 16px;
-    width: 16.6%;
+    width: 100%;
     text-align: center;
 }
  
@@ -51,7 +51,7 @@ body {
     color: #fdfdfd;
 }
  
-.nav a:active {
+.active {
     background-color: #006606;
     color: #fdfdfd;
     cursor: default;

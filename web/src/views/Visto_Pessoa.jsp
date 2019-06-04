@@ -11,12 +11,26 @@
     </head>
     <body>
         <nav class="navbar nav">
-            <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="Pessoas.jsp">Pessoas</a>
-            <a class="nav-link" href="Vistos.jsp">Vistos</a>
-            <a class="nav-link" href="#">Tipos de Vistos</a>
-            <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>
-            <a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a> 
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.jsp">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="Pessoas.jsp">Pessoas</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="Vistos.jsp">Vistos</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">Tipos de Vistos</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>
+                </li>
+                <li>
+                    <a class="active" href="Visto_Pessoa.jsp">Visualização</a> 
+                </li>
+            </ul>
         </nav>
         <section class="container cont w-100 p-3">
             <div class="item" style="width: 33%;"><%-- Visto --%>
