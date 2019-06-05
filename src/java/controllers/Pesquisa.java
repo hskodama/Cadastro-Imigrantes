@@ -10,6 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Pessoa;
+import model.Pessoa_c1;
+import model.Pessoa_c2;
+import model.Visto;
 
 /**
  *
@@ -26,10 +30,9 @@ public class Pesquisa extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response); 
         
         String c1_nome = request.getParameter("c1_nome");
         String str = request.getParameter("c1_class");
@@ -38,36 +41,66 @@ public class Pesquisa extends HttpServlet {
             c1_class=0;
         else
             c1_class = Integer.parseInt(str);
+        
         String c2_data = request.getParameter("c2_data");
         String c2_est = request.getParameter("c2_est");
         
-        String rne = request.getParameter("rne");
+        String pessoa_rne = request.getParameter("pessoa_rne");
         String pessoa_nome = request.getParameter("pessoa_nome");
         String pessoa_nac = request.getParameter("pessoa_nac");
         String pessoa_est = request.getParameter("pessoa_est");
         
         String visto_class = request.getParameter("visto_class");
+        String visto_rne = request.getParameter("visto_rne");
         
         PrintWriter response_writer = response.getWriter();
         
         // Pesquisa avancada 1
         if(c1_nome != null && c1_class != 0){
-            
+            Pessoa_c1 new_user = new Pessoa_c1();
+            new_user.setNome(c1_nome);
+            new_user.setClassificaco(c1_class);
         }
         
         // Pesquisa avancada 2
         else if(c2_data != null && c2_est != null){
-            
+            Pessoa_c2 new_user = new Pessoa_c2();
+            new_user.setData(c2_data);
+            new_user.setEstado(c2_est);
         }
         
         // Pesquisa por pessoa
-        else if(rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
+        else if(pessoa_rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
+            Pessoa new_user = new Pessoa();
             
+            if(pessoa_rne != null){
+                new_user.setRne(pessoa_rne);
+            }
+            
+            if(pessoa_nome != null){
+                new_user.setNome(pessoa_nome);
+            }
+            
+            if(pessoa_nac != null){
+                new_user.setNacionalidade(pessoa_nac);
+            }
+            
+            if(pessoa_est != null){
+                new_user.setEstado(pessoa_est);
+            }
         }
         
         // Pesquisa por visto
-        else if(rne != null || visto_class != null){
+        else if(visto_rne != null || visto_class != null){
+            Visto new_user = new Visto();
             
+            if(visto_rne != null){
+                new_user.setRne(visto_rne);
+            }
+            
+            if(visto_class != null){
+                new_user.setClassificacao(visto_class);
+            }
         }
         
         // Caso as pesquisas tenham sido mal especificadas ##Verificar se isso sera tratado aqui##
@@ -75,6 +108,13 @@ public class Pesquisa extends HttpServlet {
             response_writer.print(this.buildPage(""));
         }
         response_writer.close();
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+//        processRequest(request, response); 
+        
+        
+        
     }
     
     private String buildPage(String user) {

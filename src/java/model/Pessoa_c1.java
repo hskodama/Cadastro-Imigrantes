@@ -25,7 +25,7 @@ public class Pessoa_c1 {
         this.nome = nome;
     }
     
-    public void setClassificaco(){
+    public void setClassificaco(int classificacao){
         this.classificacao = classificacao;
     }
 }
