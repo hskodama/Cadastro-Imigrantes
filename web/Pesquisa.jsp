@@ -38,11 +38,7 @@
             </ul>
         </nav>
         <div class="cont">
-        <!-- <form method="GET" action="Pesquisa"> -->
-        <!-- <p><label for="login">Username:</label><input type="text" id="login" name="login"></p> -->
-        <!-- <p><label for="pass">Password:</label><input type="password" id="pass" name="pass"></p> -->
-        <!-- <p><input type="submit" value="Log me in"></p> -->
-        <!-- </form> -->
+
         <section class="container cont" style="display: inline;">
         	<div style="margin-left: 30px;margin-bottom: 20px">
         		Pesquise sobre:
@@ -54,15 +50,15 @@
         			<ul class="info">
         				<div class="div_flex">
 	                        <li >RNE: </li>
-	                        <input type="text" name="rne">
+	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
                     	</div>
                     	<div class="div_flex">
 	                        <li >Nome: </li>
-	                        <input type="text" name="pessoa_nome">
+	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="pessoa_nome">
                         </div>
                         <div class="div_flex">
 	                        <li >Nacionalidade:</li>
-	                        <input type="text" name="pessoa_nac">
+	                        <input pattern="^[a-zA-z]{1,3}$" type="text" name="pessoa_nac">
                         </div>
                         <div class="div_flex">
 	                        <li >Estado Residente:</li>
@@ -110,11 +106,11 @@
         			<ul class="info">
         				<div class="div_flex">
 	                        <li >RNE: </li>
-	                        <input type="text" name="rne">
+	                        <input required="required" pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
                     	</div>
                     	<div class="div_flex">
 	                        <li >Classificação: </li>
-	                        <select  name = "visto_class" >
+	                        <select required="required" name="visto_class">
 	                        	<option value=''>Selecione</option>
 	                        	<option value='vitra'>Transporte</option>
 	                        	<option value='vitur'>Turismo</option>
@@ -144,24 +140,33 @@
         </div>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script language="javascript" type="text/javascript">
-        	function expandir(elemento){
-        		var div = document.getElementById(elemento);
-        		div.style.width="50%";
-        		div.style.paddingTop="5px";
-        		if(elemento == "card_pessoa")
-				{
-					document.getElementById("form_pessoa").style.display="flex";
-					document.getElementById("form_visto").style.display="none";
-					document.getElementById("card_visto").style = "card";
-				}
-				else
-				{
-					document.getElementById("form_visto").style.display="flex";
-					document.getElementById("form_pessoa").style.display="none";
-					document.getElementById("card_pessoa").style = "card";
-				}
+            function expandir(elemento){
+                var div = document.getElementById(elemento);
+                div.style.width="50%";
+                div.style.paddingTop="5px";
+                if(elemento == "card_pessoa")
+                    {
+                            document.getElementById("form_pessoa").style.display="flex";
+                            document.getElementById("form_visto").style.display="none";
+                            document.getElementById("card_visto").style = "card";
+                    }
+                    else
+                    {
+                            document.getElementById("form_visto").style.display="flex";
+                            document.getElementById("form_pessoa").style.display="none";
+                            document.getElementById("card_pessoa").style = "card";
+                    }
 
-        	}
+            }
+            
+            function validarDados() {
+                if(document.dados.RNE.length != 10) {
+                    alert("RNE inválido.");
+                    document.dados.RNE.focus();
+                    return false;
+                }
+            }
+            
         </script>
     </body>
 </html>
