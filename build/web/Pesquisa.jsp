@@ -44,7 +44,7 @@
         		Pesquise sobre:
         	</div>
 
-        	<form method="GET" action="Pesquisa"class="card" id="card_pessoa" onclick="expandir(id)">
+        	<form method="POST" action="Pesquisa"class="card" id="card_pessoa" onclick="expandir(id)">
         		Pessoa
         		<div class="form_card" id="form_pessoa" style="display: none;">
         			<ul class="info">
@@ -100,7 +100,7 @@
         		</div>
         	</form>
 
-        	<form method="GET" action="Pesquisa" class="card" id="card_visto" onclick="expandir(id)">
+        	<form method="POST" action="Pesquisa" class="card" id="card_visto" onclick="expandir(id)">
         		Visto
         		<div class="form_card" id="form_visto" style='display: none'>
         			<ul class="info">
