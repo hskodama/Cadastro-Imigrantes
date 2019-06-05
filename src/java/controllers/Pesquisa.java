@@ -32,8 +32,12 @@ public class Pesquisa extends HttpServlet {
 //        processRequest(request, response); 
         
         String c1_nome = request.getParameter("c1_nome");
-        int c1_class = Integer.parseInt(request.getParameter("c1_class"));
-        
+        String str = request.getParameter("c1_class");
+        int c1_class ;
+        if (str == null)
+            c1_class=0;
+        else
+            c1_class = Integer.parseInt(str);
         String c2_data = request.getParameter("c2_data");
         String c2_est = request.getParameter("c2_est");
         
@@ -80,56 +84,20 @@ public class Pesquisa extends HttpServlet {
     page = "<!doctype html>"
             + "<html>"
             + "<head>"
-            + "<meta charset=\"UTF-8\">"
-            + "<title>Ride Share</title>"
-            + "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+            + "<meta charset=\"UTF-8\">"         
             + "</head>"
             + "<body>"
-            + "<header>"
-            + "<h1><a href=\"index.jsp\">Ride Share</a></h1>"
-            + "<nav>"
-            + "<ul>"
-            + "<li><a href=\"index.jsp\">Home</a></li>"
-            + "<li><a href=\"./signup.jsp\">Sign up</a></li>"
-            + "</ul>"
-            + "</nav>"
-            + "</header>"
-            + "<section>"
-            + "<article>"
-            + "<h1>Incorrect Username or Password</h1>"
-            + "</article>"
-            + "</section>"
-            + "<footer>"
-            + "<p>Web Development - UFSCar Sorocaba - 2015</p>"
-            + "</footer>"
+            + "<h1>Hello World</h1>"
             + "</body>"
             + "</html>";
   } else {
     page = "<!doctype html>"
             + "<html>"
             + "<head>"
-            + "<meta charset=\"UTF-8\">"
-            + "<title>Ride Share</title>"
-            + "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+            + "<meta charset=\"UTF-8\">"         
             + "</head>"
             + "<body>"
-            + "<header>"
-            + "<h1><a href=\"index.jsp\">Ride Share</a></h1>"
-            + "<nav>"
-            + "<ul>"
-            + "<li><a href=\"index.jsp\">Home</a></li>"
-            + "<li><a href=\"./signup.jsp\">Sign up</a></li>"
-            + "</ul>"
-            + "</nav>"
-            + "</header>"
-            + "<section>"
-            + "<article>"
-            + "<h1>Welcome "+ user +"!</h1>"
-            + "</article>"
-            + "</section>"
-            + "<footer>"
-            + "<p>Web Development - UFSCar Sorocaba - 2015</p>"
-            + "</footer>"
+            + "<h1>Hello World</h1>"
             + "</body>"
             + "</html>";
   }
