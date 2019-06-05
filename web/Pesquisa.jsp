@@ -38,35 +38,31 @@
             </ul>
         </nav>
         <div class="cont">
-        <form method="GET" action="Pesquisa" name="dados">
-        <p><label for="login">Username:</label><input type="text" id="login" name="login"></p>
-        <p><label for="pass">Password:</label><input type="password" id="pass" name="pass"></p>
-        <p><input type="submit" value="Log me in"></p>
-        </form>
+
         <section class="container cont" style="display: inline;">
         	<div style="margin-left: 30px;margin-bottom: 20px">
         		Pesquise sobre:
         	</div>
 
-        	<div class="card" id="card_pessoa" onclick="expandir(id)">
+        	<form method="GET" action="Pesquisa"class="card" id="card_pessoa" onclick="expandir(id)">
         		Pessoa
         		<div class="form_card" id="form_pessoa" style="display: none;">
         			<ul class="info">
         				<div class="div_flex">
 	                        <li >RNE: </li>
-	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="RNE">
+	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
                     	</div>
                     	<div class="div_flex">
 	                        <li >Nome: </li>
-	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="Nome">
+	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="pessoa_nome">
                         </div>
                         <div class="div_flex">
 	                        <li >Nacionalidade:</li>
-	                        <input pattern="^[a-zA-z]{1,3}$ type="text" name="Nacionalidade">
+	                        <input pattern="^[a-zA-z]{1,3}$" type="text" name="pessoa_nac">
                         </div>
                         <div class="div_flex">
 	                        <li >Estado Residente:</li>
-	                        <select>
+	                        <select name="pessoa_est">
 	                        	<option value=''>Selecione</option>
 	                        	<option value='AC'>Acre</option>
 	                        	<option value='AL'>Alagoas</option>
@@ -98,34 +94,45 @@
 	                        </select>
                     	</div>
                     </ul>
+                    <button>
+                        Submit
+                    </button>
         		</div>
-        	</div>
+        	</form>
 
-        	<div class="card" id="card_visto" onclick="expandir(id)">
+        	<form method="GET" action="Pesquisa" class="card" id="card_visto" onclick="expandir(id)">
         		Visto
         		<div class="form_card" id="form_visto" style='display: none'>
         			<ul class="info">
         				<div class="div_flex">
 	                        <li >RNE: </li>
-	                        <input required="required" pattern="[a-zA-Z0-9]{1,10}$" type="text" name="RNE">
+	                        <input required="required" pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
                     	</div>
                     	<div class="div_flex">
 	                        <li >Classificação: </li>
-	                        <select required="required">
+	                        <select required="required" name="visto_class">
 	                        	<option value=''>Selecione</option>
-	                        	<option value='Diplomatico'>Diplomatico</option>
-	                        	<option value='Oficial'>Oficial</option>
-	                        	<option value='Cortesia'>Cortesia</option>
-	                        	<option value='Turista'>Turista</option>
-	                        	<option value='Trânsito'>Trânsito</option>
-	                        	<option value='Negócios'>Negócios</option>
-	                        	<option value='Permanente'>Permanente</option>
-	                        	<option value='Temporário'>Temporário</option>
+	                        	<option value='vitra'>Transporte</option>
+	                        	<option value='vitur'>Turismo</option>
+	                        	<option value='viper'>Permanente</option>
+	                        	<option value='vicor'>Cortesia</option>
+	                        	<option value='visof"'>Oficial</option>
+	                        	<option value='vrt_1'>Cultural/Missão de Estudos</option>
+	                        	<option value='vrt_2'>Negócios</option>
+	                        	<option value='vrt_3'>Artista/Desportistas</option>
+                                <option value='vrt_4'>Estudante</option>
+                                <option value='vrt_5'>Trabalho</option>
+                                <option value='vrt_6'>Jornalista</option>
+                                <option value='vrt_7'>Religioso</option>
 	                        </select>
                         </div>
                     </ul>
+                    <button>
+                        Submit
+                    </button>
         		</div>
-        	</div>
+        	</form>
+
         	<div class="linha">
         	</div>
 
