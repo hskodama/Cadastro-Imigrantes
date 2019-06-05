@@ -37,126 +37,200 @@
                 </li>
             </ul>
         </nav>
-        <div class="cont">
-
-        <section class="container cont" style="display: inline;">
-        	<div style="margin-left: 30px;margin-bottom: 20px">
+        <section class="container cont" id="sessao" style="display: inline;">
+        	<h4 style="margin-left: 30px;margin-bottom: 20px">
         		Pesquise sobre:
-        	</div>
-
-        	<form method="POST" action="Pesquisa"class="card" id="card_pessoa" onclick="expandir(id)">
-        		Pessoa
-        		<div class="form_card" id="form_pessoa" style="display: none;">
-        			<ul class="info">
-        				<div class="div_flex">
-	                        <li >RNE: </li>
-	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
-                    	</div>
-                    	<div class="div_flex">
-	                        <li >Nome: </li>
-	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="pessoa_nome">
-                        </div>
-                        <div class="div_flex">
-	                        <li >Nacionalidade:</li>
-	                        <input pattern="^[a-zA-z]{1,3}$" type="text" name="pessoa_nac">
-                        </div>
-                        <div class="div_flex">
-	                        <li >Estado Residente:</li>
-	                        <select name="pessoa_est">
-	                        	<option value=''>Selecione</option>
-	                        	<option value='AC'>Acre</option>
-	                        	<option value='AL'>Alagoas</option>
-	                        	<option value='AP'>Amapá</option>
-	                        	<option value='AM'>Amazonas</option>
-	                        	<option value='BA'>BA</option>
-	                        	<option value='CE'>Ceará</option>
-	                        	<option value='DF'>Distrito Federal</option>
-	                        	<option value='ES'>Espírito Santo</option>
-	                        	<option value='GO'>Goiás</option>
-	                        	<option value='MA'>Maranhão</option>
-	                        	<option value='MT'>Mato Grosso</option>
-	                        	<option value='MS'>Mato Grosso do Sul</option>
-	                        	<option value='MG'>Minas Gerais</option>
-	                        	<option value='PA'>Pará</option>
-	                        	<option value='PB'>Paraíba</option>
-	                        	<option value='PR'>Paraná</option>
-	                        	<option value='PE'>Pernambuco</option>
-	                        	<option value='PI'>Piauí</option>
-	                        	<option value='RJ'>Rio de Janeiro</option>
-	                        	<option value='RN'>Rio Grande do Norte</option>
-	                        	<option value='RS'>Rio Grande do Sul</option>
-	                        	<option value='RO'>Rondônia</option>
-	                        	<option value='RR'>Roraima</option>
-	                        	<option value='SC'>Santa Catarina</option>
-	                        	<option value='SP'>São Paulo</option>
-	                        	<option value='SE'>Sergipe</option>
-	                        	<option value='TO'>Tocantins</option>
-	                        </select>
-                    	</div>
-                    </ul>
-                    <button>
-                        Submit
-                    </button>
-        		</div>
-        	</form>
-
-        	<form method="POST" action="Pesquisa" class="card" id="card_visto" onclick="expandir(id)">
-        		Visto
-        		<div class="form_card" id="form_visto" style='display: none'>
-        			<ul class="info">
-        				<div class="div_flex">
-	                        <li >RNE: </li>
-	                        <input required="required" pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
-                    	</div>
-                    	<div class="div_flex">
-	                        <li >Classificação: </li>
-	                        <select required="required" name="visto_class">
-	                        	<option value=''>Selecione</option>
-	                        	<option value='vitra'>Transporte</option>
-	                        	<option value='vitur'>Turismo</option>
-	                        	<option value='viper'>Permanente</option>
-	                        	<option value='vicor'>Cortesia</option>
-	                        	<option value='visof"'>Oficial</option>
-	                        	<option value='vrt_1'>Cultural/Missão de Estudos</option>
-	                        	<option value='vrt_2'>Negócios</option>
-	                        	<option value='vrt_3'>Artista/Desportistas</option>
-                                <option value='vrt_4'>Estudante</option>
-                                <option value='vrt_5'>Trabalho</option>
-                                <option value='vrt_6'>Jornalista</option>
-                                <option value='vrt_7'>Religioso</option>
-	                        </select>
-                        </div>
-                    </ul>
-                    <button>
-                        Submit
-                    </button>
-        		</div>
-        	</form>
-
+        	</h4>
+            <div class="tipo_margin">
+            	<form method="POST" action="Pesquisa"class="collapsible" id="card_pessoa" onclick="expandir(id)">
+            		Pessoa
+            		<div class="form_card" id="form_pessoa" style="display: none;">
+            			<ul class="info">
+            				<div class="div_flex">
+    	                        <li >RNE: </li>
+    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
+                        	</div>
+                        	<div class="div_flex">
+    	                        <li >Nome: </li>
+    	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="pessoa_nome">
+                            </div>
+                            <div class="div_flex">
+    	                        <li >Nacionalidade:</li>
+    	                        <input pattern="^[a-zA-z]{1,3}$" type="text" name="pessoa_nac">
+                            </div>
+                            <div class="div_flex">
+    	                        <li >Estado Residente:</li>
+    	                        <select name="pessoa_est">
+    	                        	<option value=''>Selecione</option>
+    	                        	<option value='AC'>Acre</option>
+    	                        	<option value='AL'>Alagoas</option>
+    	                        	<option value='AP'>Amapá</option>
+    	                        	<option value='AM'>Amazonas</option>
+    	                        	<option value='BA'>BA</option>
+    	                        	<option value='CE'>Ceará</option>
+    	                        	<option value='DF'>Distrito Federal</option>
+    	                        	<option value='ES'>Espírito Santo</option>
+    	                        	<option value='GO'>Goiás</option>
+    	                        	<option value='MA'>Maranhão</option>
+    	                        	<option value='MT'>Mato Grosso</option>
+    	                        	<option value='MS'>Mato Grosso do Sul</option>
+    	                        	<option value='MG'>Minas Gerais</option>
+    	                        	<option value='PA'>Pará</option>
+    	                        	<option value='PB'>Paraíba</option>
+    	                        	<option value='PR'>Paraná</option>
+    	                        	<option value='PE'>Pernambuco</option>
+    	                        	<option value='PI'>Piauí</option>
+    	                        	<option value='RJ'>Rio de Janeiro</option>
+    	                        	<option value='RN'>Rio Grande do Norte</option>
+    	                        	<option value='RS'>Rio Grande do Sul</option>
+    	                        	<option value='RO'>Rondônia</option>
+    	                        	<option value='RR'>Roraima</option>
+    	                        	<option value='SC'>Santa Catarina</option>
+    	                        	<option value='SP'>São Paulo</option>
+    	                        	<option value='SE'>Sergipe</option>
+    	                        	<option value='TO'>Tocantins</option>
+    	                        </select>
+                        	</div>
+                            <button style="float: right">
+                                Enviar
+                            </button>
+                        </ul>
+            		</div>
+            	</form>
+            </div>
+            <div class="tipo_margin">
+            	<form method="POST" action="Pesquisa" class="collapsible" id="card_visto" onclick="expandir(id)">
+            		Visto
+            		<div class="form_card" id="form_visto" style='display: none'>
+            			<ul class="info">
+            				<div class="div_flex">
+    	                        <li >RNE: </li>
+    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
+                        	</div>
+                        	<div class="div_flex">
+    	                        <li >Classificação: </li>
+    	                        <select name="visto_class">
+    	                        	<option value=''>Selecione</option>
+    	                        	<option value='vitra'>Transporte</option>
+    	                        	<option value='vitur'>Turismo</option>
+    	                        	<option value='viper'>Permanente</option>
+    	                        	<option value='vicor'>Cortesia</option>
+    	                        	<option value='visof"'>Oficial</option>
+    	                        	<option value='vrt_1'>Cultural/Missão de Estudos</option>
+    	                        	<option value='vrt_2'>Negócios</option>
+    	                        	<option value='vrt_3'>Artista/Desportistas</option>
+                                    <option value='vrt_4'>Estudante</option>
+                                    <option value='vrt_5'>Trabalho</option>
+                                    <option value='vrt_6'>Jornalista</option>
+                                    <option value='vrt_7'>Religioso</option>
+    	                        </select>
+                            </div>
+                            <button style="float: right">
+                                Enviar
+                            </button>
+                        </ul>
+            		</div>
+            	</form>
+            </div>
+            <div class="tipo_margin">
+                <form method="POST" action="Pesquisa" class="collapsible" id="card_avacado1" onclick="expandir(id)">
+                    Pesquisa Avançada 1
+                    <div class="form_card" id="form_avanc1" style='display: none'>
+                        <ul class="info">
+                            <div class="div_flex">
+                                <li >Nome: </li>
+                                <input required="required" pattern="[a-zA-Z0-9]{1,10}$" type="text" name="c1_nome">
+                            </div>
+                            <div class="div_flex">
+                                <li >Classificação: </li>
+                                <select required="required" name="c1_class">
+                                    <option value=''>Selecione</option>
+                                    <option value='vitra'>Transporte</option>
+                                    <option value='vitur'>Turismo</option>
+                                    <option value='viper'>Permanente</option>
+                                    <option value='vicor'>Cortesia</option>
+                                    <option value='visof"'>Oficial</option>
+                                    <option value='vrt_1'>Cultural/Missão de Estudos</option>
+                                    <option value='vrt_2'>Negócios</option>
+                                    <option value='vrt_3'>Artista/Desportistas</option>
+                                    <option value='vrt_4'>Estudante</option>
+                                    <option value='vrt_5'>Trabalho</option>
+                                    <option value='vrt_6'>Jornalista</option>
+                                    <option value='vrt_7'>Religioso</option>
+                                </select>
+                            </div>
+                            <button style="float: right">
+                                Enviar
+                            </button>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="tipo_margin">
+                <form method="POST" action="Pesquisa" class="collapsible" id="card_avancado2" onclick="expandir(id)">
+                    Pesquisa Avançada 2
+                    <div class="form_card" id="form_avanc2" style='display: none'>
+                        <ul class="info">
+                            <div class="div_flex">
+                                <li >Data: </li>
+                                <input required="required" type="date" name="c2_data">
+                            </div>
+                            <div class="div_flex">
+                                <li >Classificação: </li>
+                                <select required="required" name="c2_est">
+                                    <option value=''>Selecione</option>
+                                    <option value='vitra'>Transporte</option>
+                                    <option value='vitur'>Turismo</option>
+                                    <option value='viper'>Permanente</option>
+                                    <option value='vicor'>Cortesia</option>
+                                    <option value='visof"'>Oficial</option>
+                                    <option value='vrt_1'>Cultural/Missão de Estudos</option>
+                                    <option value='vrt_2'>Negócios</option>
+                                    <option value='vrt_3'>Artista/Desportistas</option>
+                                    <option value='vrt_4'>Estudante</option>
+                                    <option value='vrt_5'>Trabalho</option>
+                                    <option value='vrt_6'>Jornalista</option>
+                                    <option value='vrt_7'>Religioso</option>
+                                </select>
+                            </div>
+                            <button style="float: right">
+                                Enviar
+                            </button>
+                        </ul>
+                    </div>
+                </form>
+            </div>
         	<div class="linha">
         	</div>
 
         </section>
-        </div>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script language="javascript" type="text/javascript">
             function expandir(elemento){
                 var div = document.getElementById(elemento);
-                div.style.width="50%";
-                div.style.paddingTop="5px";
-                if(elemento == "card_pessoa")
-                    {
-                            document.getElementById("form_pessoa").style.display="flex";
-                            document.getElementById("form_visto").style.display="none";
-                            document.getElementById("card_visto").style = "card";
-                    }
-                    else
-                    {
-                            document.getElementById("form_visto").style.display="flex";
-                            document.getElementById("form_pessoa").style.display="none";
-                            document.getElementById("card_pessoa").style = "card";
-                    }
 
+                var section = document.getElementById("sessao");
+
+                var card = section.getElementsByClassName("form_card");
+                var collap = section.getElementsByClassName("collapsible");
+                var i;
+                for (i = 0 ; i < 4 ; i++) {
+                    if(collap[i].classList.contains("show")==true)
+                        collap[i].classList.toggle("show");
+                    card[i].style.display = "none";
+                }
+                div.classList.toggle("show");
+
+                if(elemento == "card_pessoa")
+                    document.getElementById("form_pessoa").style.display="flex";
+                else
+                    if(elemento == "card_visto")
+                        document.getElementById("form_visto").style.display="flex";
+                    else
+                        if(elemento == "card_avacado1")
+                            document.getElementById("form_avanc1").style.display="flex";
+                        else
+                            document.getElementById("form_avanc2").style.display="flex";
             }
             
             function validarDados() {
@@ -168,5 +242,6 @@
             }
             
         </script>
+
     </body>
 </html>
