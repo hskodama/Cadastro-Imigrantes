@@ -36,46 +36,46 @@
                 </li>
             </ul>
         </nav>
-
-        <div id="tabela">
-            <table id="pessoas_tab" class="table table-stripped table-bordered" style="width: 90%">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>RNE</th>
-                        <th>Nacionalidade</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Luca Fioreto</td>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Itália</td>
-                        <td>São Paulo</td>
-                    </tr>
-                    <tr>
-                        <td>Maria Antonia</td>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Portugal</td>
-                        <td>Minas Gerais</td>
-                    </tr>
-                    <tr>
-                        <td>Helga Hofstader</td>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Alemanha</td>
-                        <td>Rio Grande do Sul</td>
-                    </tr>
-                    <tr>
-                        <td>Antoine Pavel</td>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>França</td>
-                        <td>Amazonas</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="cont">
+            <div id="tabela">
+                <table id="pessoas_tab" class="table table-stripped table-bordered" style="width: 90%">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RNE</th>
+                            <th>Nacionalidade</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Luca Fioreto</td>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Itália</td>
+                            <td>São Paulo</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Antonia</td>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Portugal</td>
+                            <td>Minas Gerais</td>
+                        </tr>
+                        <tr>
+                            <td>Helga Hofstader</td>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Alemanha</td>
+                            <td>Rio Grande do Sul</td>
+                        </tr>
+                        <tr>
+                            <td>Antoine Pavel</td>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>França</td>
+                            <td>Amazonas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
         
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
     </body>

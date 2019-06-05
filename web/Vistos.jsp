@@ -36,47 +36,47 @@
                 </li>
             </ul>
         </nav>
+        <div class="cont">
+            <div id="tabela">
+                <table id="pessoas_tab" class="table table-stripped table-bordered" style="width: 90%">
+                    <thead>
+                        <tr>
+                            <th>RNE</th>
+                            <th>Classificação</th>
+                            <th>Expedição</th>
+                            <th>Expiração</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Turismo</td>
+                            <td>DD/MM/AAAA</td>
+                            <td>DD/MM/AAAA</td>
+                        </tr>
+                        <tr>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Estudante</td>
+                            <td>DD/MM/AAAA</td>
+                            <td>DD/MM/AAAA</td>
+                        </tr>
+                        <tr>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Trabalho</td>
+                            <td>DD/MM/AAAA</td>
+                            <td>DD/MM/AAAA</td>
+                        </tr>
+                        <tr>
+                            <td>XXX.XXX.XXX-XX</td>
+                            <td>Diplomático</td>
+                            <td>DD/MM/AAAA</td>
+                            <td>DD/MM/AAAA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div id="tabela">
-            <table id="pessoas_tab" class="table table-stripped table-bordered" style="width: 90%">
-                <thead>
-                    <tr>
-                        <th>RNE</th>
-                        <th>Classificação</th>
-                        <th>Expedição</th>
-                        <th>Expiração</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Turismo</td>
-                        <td>DD/MM/AAAA</td>
-                        <td>DD/MM/AAAA</td>
-                    </tr>
-                    <tr>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Estudante</td>
-                        <td>DD/MM/AAAA</td>
-                        <td>DD/MM/AAAA</td>
-                    </tr>
-                    <tr>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Trabalho</td>
-                        <td>DD/MM/AAAA</td>
-                        <td>DD/MM/AAAA</td>
-                    </tr>
-                    <tr>
-                        <td>XXX.XXX.XXX-XX</td>
-                        <td>Diplomático</td>
-                        <td>DD/MM/AAAA</td>
-                        <td>DD/MM/AAAA</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-
-        
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
     </body>
 

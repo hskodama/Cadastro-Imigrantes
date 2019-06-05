@@ -37,7 +37,7 @@
                 </li>
             </ul>
         </nav>
-
+        <div class="cont">
         <form method="GET" action="Pesquisa">
         <p><label for="login">Username:</label><input type="text" id="login" name="login"></p>
         <p><label for="pass">Password:</label><input type="password" id="pass" name="pass"></p>
@@ -130,7 +130,7 @@
         	</div>
 
         </section>
-
+        </div>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script language="javascript" type="text/javascript">
         	function expandir(elemento){
