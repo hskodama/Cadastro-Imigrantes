@@ -41,12 +41,11 @@ public class Pesquisa extends HttpServlet {
         String c2_data = request.getParameter("c2_data");
         String c2_est = request.getParameter("c2_est");
         
-        String pessoa_rne = request.getParameter("pessoa_rne");
+        String rne = request.getParameter("rne");
         String pessoa_nome = request.getParameter("pessoa_nome");
         String pessoa_nac = request.getParameter("pessoa_nac");
         String pessoa_est = request.getParameter("pessoa_est");
         
-        String visto_rne = request.getParameter("visto_rne");
         String visto_class = request.getParameter("visto_class");
         
         PrintWriter response_writer = response.getWriter();
@@ -62,12 +61,12 @@ public class Pesquisa extends HttpServlet {
         }
         
         // Pesquisa por pessoa
-        else if(pessoa_rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
+        else if(rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
             
         }
         
         // Pesquisa por visto
-        else if(visto_rne != null || visto_class != null){
+        else if(rne != null || visto_class != null){
             
         }
         
