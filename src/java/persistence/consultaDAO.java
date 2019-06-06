@@ -19,8 +19,8 @@ public class consultaDAO {
     
     public consultaDAO(){
         try {
-//            /Class.forName("org.postgresql.Driver").newInstance();
-            myConnection = DriverManager.getConnection("jdbc:postgresql:" + "//localhost/CadastroEstrangeiro?user=postgres&password=123456");
+            Class.forName("org.postgresql.Driver");
+            myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
             st = myConnection.createStatement();
         }
         catch(Exception e){
@@ -36,9 +36,13 @@ public class consultaDAO {
 
         //Variavel temporaria que armazenarah um unico filme
         Pessoa p;
-        
+        int i;
+        String aux;
+        int aux2;
+        int aux3;
+        String aux4;
         try{            
-            st.execute( "select * from tipo");
+            st.execute("select * from tipo");
 
             // Armazena o resultado da consulta na variavel 'rs'.
             rs = st.getResultSet();
@@ -50,8 +54,13 @@ public class consultaDAO {
             //   e false, caso contrario
 
             while (rs.next()){
+                i = rs.getInt("tipo");
+                aux = rs.getString("nome");
+                aux2 = rs.getInt("tempo_limite");
+                aux3 = rs.getInt("quantidade");
+                aux4 = rs.getString("descricao");
                 p = new Pessoa (rs.getString(1),rs.getString(2),rs.getString(3), rs.getString(4));
-
+                
                 //Armazena o novo filme no vetor
                 res.addElement(p);
             }

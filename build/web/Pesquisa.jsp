@@ -234,16 +234,16 @@
                 <td>Estado</td>
             </tr>
             <%
-//                Vector array_aux = (Vector) request.getAttribute("pesquisa_pessoa"); 
+                Vector array_aux = (Vector) request.getAttribute("pesquisa_pessoa"); 
 //                Object[] pesquisa_pessoa = array_aux.toArray(new Pessoa[array_aux.size()]);
-//                
+////                
 //                Pessoa[] teste = Arrays.copyOf(pesquisa_pessoa, pesquisa_pessoa.length, Pessoa[].class);
 //                                
                 for(int i = 0 ; i < 10 ; i++){
 
             %>
 
-            <tr><td><%out.println("1");%></td></tr>
+            <tr><td><%out.println(i);%></td></tr>
 
 
             <%
