@@ -63,15 +63,25 @@ public class Pesquisa extends HttpServlet {
         if(c1_nome != null && c1_class != 0){
             Pessoa_c1 new_user = new Pessoa_c1();
             new_user.setNome(c1_nome);
-            new_user.setClassificaco(c1_class);
+            new_user.setClass(Integer.toString(c1_class));
+            
+            Vector exibe = consulta.buscarC1(new_user.getNome(), new_user.getClassificacao());
+            
+            request.setAttribute("pesquisa_c1", exibe);
+    
+            RequestDispatcher dispatcher = null;
+            dispatcher = request.getRequestDispatcher("./Pesquisa.jsp");
+            dispatcher.forward(request, response);
         }
         
         // Pesquisa avancada 2
-        else if(c2_data != null && c2_est != null){
-            Pessoa_c2 new_user = new Pessoa_c2();
-            new_user.setData(c2_data);
-            new_user.setEstado(c2_est);
-        }
+//        else if(c2_data != null && c2_est != null){
+//            Pessoa_c2 new_user = new Pessoa_c2();
+//            new_user.setDataFiltro(c2_data);
+//            new_user.setEstado(c2_est);
+//            
+//            
+//        }
         
         // Pesquisa por pessoa
         else if(pessoa_rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
@@ -93,14 +103,16 @@ public class Pesquisa extends HttpServlet {
         // Pesquisa por visto
         else if(visto_rne != null || visto_class != null){
             Visto new_user = new Visto();
+            new_user.setClassificacao(visto_class);
+            new_user.setRne(visto_rne);
             
-            if(visto_rne != null){
-                new_user.setRne(visto_rne);
-            }
+            Vector exibe = consulta.buscarVisto(new_user.getRne(), new_user.getClassificacao());
             
-            if(visto_class != null){
-                new_user.setClassificacao(visto_class);
-            }
+            request.setAttribute("pesquisa_visto", exibe);
+    
+            RequestDispatcher dispatcher = null;
+            dispatcher = request.getRequestDispatcher("./Pesquisa.jsp");
+            dispatcher.forward(request, response);
         }
         
         // Caso as pesquisas tenham sido mal especificadas ##Verificar se isso sera tratado aqui##
