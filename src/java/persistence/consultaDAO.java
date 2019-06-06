@@ -19,10 +19,11 @@ public class consultaDAO {
     
     public consultaDAO(){
         try {
-            myConnection = DriverManager.getConnection("jdbc:postgresql:" + "//localhost/CadastroEstrangeiro", "postgres", "1234");
+//            /Class.forName("org.postgresql.Driver").newInstance();
+            myConnection = DriverManager.getConnection("jdbc:postgresql:" + "//localhost/CadastroEstrangeiro?user=postgres&password=123456");
             st = myConnection.createStatement();
         }
-        catch(SQLException e){
+        catch(Exception e){
             System.out.println(e.getMessage());
         }
     }
@@ -36,14 +37,8 @@ public class consultaDAO {
         //Variavel temporaria que armazenarah um unico filme
         Pessoa p;
         
-        try{
-            // Envia uma consulta que retornarah todos os elementos
-            //   da tabela Filme, armazenados no SGBD.
-            st.executeQuery( "select rne, nome, nacionalidade, estado_mora from pessoa" +
-                        "where rne like" + rne +
-                        "and nome like" + nome +
-                        "and nacionalidade like" + nacionalidade +
-                        "and estado_mora like" + estado_mora);
+        try{            
+            st.execute( "select * from tipo");
 
             // Armazena o resultado da consulta na variavel 'rs'.
             rs = st.getResultSet();
@@ -55,11 +50,6 @@ public class consultaDAO {
             //   e false, caso contrario
 
             while (rs.next()){
-                //Recupera os atributos de cada tupla pelo seu indice
-                //  e cria um nova instancia da classe Filme
-                //  1 - Titulo
-                //  2 - Diretor
-                //  3 - Genero
                 p = new Pessoa (rs.getString(1),rs.getString(2),rs.getString(3), rs.getString(4));
 
                 //Armazena o novo filme no vetor
@@ -73,5 +63,58 @@ public class consultaDAO {
         return res;
         
         
+    }
+    
+    public Vector buscarVisto(String rne, String classificacao){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Visto v;
+        
+        try{
+            st.execute( "select * from visto where rne like" + rne
+                            + "and cast(classificacao as text) like" + classificacao);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                v = new Visto (rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+
+                //Armazena o novo filme no vetor
+                res.addElement(v);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
+    }
+    
+    public Vector buscarC1(String nome, String classificacao){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Pessoa_c1 p;
+        
+        try{
+            st.execute("select * from consulta1('%" + nome + "%', " + classificacao + ")");
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                p = new Pessoa_c1 (rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5), rs.getString(6));
+
+                //Armazena o novo filme no vetor
+                res.addElement(p);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
     }
 }
