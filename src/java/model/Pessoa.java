@@ -46,28 +46,28 @@ public class Pessoa {
     }
     
     public void setRne(String rne){
-        if (rne == null)
+        if (rne.isEmpty())
             this.rne = "%";
         else 
             this.rne = rne;
     }
     
     public void setNome(String nome){
-        if(nome == null)
+        if(nome.isEmpty())
             this.nome = "%";
         else
             this.nome = nome;
     }
     
     public void setNacionalidade(String nacionalidade){
-        if(nacionalidade == null)
+        if(nacionalidade.isEmpty())
             this.nacionalidade = "%";
         else
             this.nacionalidade = nacionalidade;
     }
     
     public void setEstado(String estado){
-        if(estado == null)
+        if(estado.isEmpty())
             this.estado = "%";
         else            
             this.estado = estado;

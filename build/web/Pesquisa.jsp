@@ -18,6 +18,18 @@
         <title>Cadastro de Imigrantes</title>
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        
+        <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+        
+        <script>
+            $(document).ready( function () {
+                $('#table_pessoas').DataTable();
+            } );
+        </script>
     </head>
     <body>
         
@@ -72,7 +84,7 @@
     	                        	<option value='AL'>Alagoas</option>
     	                        	<option value='AP'>Amapá</option>
     	                        	<option value='AM'>Amazonas</option>
-    	                        	<option value='BA'>BA</option>
+    	                        	<option value='BA'>Bahia</option>
     	                        	<option value='CE'>Ceará</option>
     	                        	<option value='DF'>Distrito Federal</option>
     	                        	<option value='ES'>Espírito Santo</option>
@@ -117,18 +129,18 @@
     	                        <li >Classificação: </li>
     	                        <select name="visto_class">
     	                        	<option value=''>Selecione</option>
-    	                        	<option value='vitra'>Transporte</option>
-    	                        	<option value='vitur'>Turismo</option>
-    	                        	<option value='viper'>Permanente</option>
-    	                        	<option value='vicor'>Cortesia</option>
-    	                        	<option value='visof"'>Oficial</option>
-    	                        	<option value='vrt_1'>Cultural/Missão de Estudos</option>
-    	                        	<option value='vrt_2'>Negócios</option>
-    	                        	<option value='vrt_3'>Artista/Desportistas</option>
-                                    <option value='vrt_4'>Estudante</option>
-                                    <option value='vrt_5'>Trabalho</option>
-                                    <option value='vrt_6'>Jornalista</option>
-                                    <option value='vrt_7'>Religioso</option>
+    	                        	<option value='1'>Transporte</option>
+    	                        	<option value='2'>Turismo</option>
+    	                        	<option value='3'>Permanente</option>
+    	                        	<option value='4'>Cortesia</option>
+    	                        	<option value='5"'>Oficial</option>
+    	                        	<option value='6'>Cultural/Missão de Estudos</option>
+    	                        	<option value='7'>Negócios</option>
+    	                        	<option value='8'>Artista/Desportistas</option>
+                                 <option value='9'>Estudante</option>
+                                 <option value='10'>Trabalho</option>
+                                 <option value='11'>Jornalista</option>
+                                 <option value='12'>Religioso</option>
     	                        </select>
                             </div>
                             <button style="float: right">
@@ -185,7 +197,7 @@
                             <div class="div_flex">
                                 <li >Estado: </li>
                                 <select required="required" name="c2_est">
-                                    <option value=''>Selecione</option>
+                                 <option value=''>Selecione</option>
     	                        	<option value='AC'>Acre</option>
     	                        	<option value='AL'>Alagoas</option>
     	                        	<option value='AP'>Amapá</option>
@@ -226,29 +238,91 @@
         	</div>
         </section>
         
-        <table border="2">
-            <tr>
-                <td>RNE</td>
-                <td>Nome</td>
-                <td>Nacionalidade</td>
-                <td>Estado</td>
-            </tr>
-            <%
-                Vector array_aux = (Vector) request.getAttribute("pesquisa_pessoa"); 
-//                Object[] pesquisa_pessoa = array_aux.toArray(new Pessoa[array_aux.size()]);
-////                
-//                Pessoa[] teste = Arrays.copyOf(pesquisa_pessoa, pesquisa_pessoa.length, Pessoa[].class);
-//                                
-                for(int i = 0 ; i < 10 ; i++){
-
-            %>
-
-            <tr><td><%out.println(i);%></td></tr>
-
-
-            <%
-                }
-            %>
+        
+<!--    Tabela de Pessoa -->
+        <%
+            Vector array_aux_pessoa = (Vector) request.getAttribute("pesquisa_pessoa"); 
+            if(array_aux_pessoa != null){
+                Object[] aux = array_aux_pessoa.toArray(new Pessoa[array_aux_pessoa.size()]);
+                Pessoa[] pesquisa_pessoa = Arrays.copyOf(aux, aux.length, Pessoa[].class);
+        %>
+                <div class="cont">
+                    <div id="tabela">
+                        <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>RNE</th>
+                                    <th>Nacionalidade</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for(int i = 0 ; i < array_aux_pessoa.size() ; i++){
+                                %>
+                                    <tr>
+                                        <td><%out.print(pesquisa_pessoa[i].getRne());%></td>
+                                        <td><%out.print(pesquisa_pessoa[i].getNome());%></td>
+                                        <td><%out.print(pesquisa_pessoa[i].getNacionalidade());%></td>
+                                        <td><%out.print(pesquisa_pessoa[i].getEstado());%></td>
+                                    </tr>
+                                <%
+                                    }
+                                %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>    
+        <%          
+            }
+        %>
+        
+<!--    Tabela de Visto-->
+        <%
+            Vector array_aux_visto = (Vector) request.getAttribute("pesquisa_visto"); 
+            if(array_aux_visto != null){
+                Object[] aux = array_aux_visto.toArray(new Visto[array_aux_visto.size()]);
+                Visto[] pesquisa_visto = Arrays.copyOf(aux, aux.length, Visto[].class);
+        %>
+                <div class="cont">
+                    <div id="tabela">
+                        <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
+                            <thead>
+                                <tr>
+                                    <th>RNE</th>
+                                    <th>Classificação</th>
+                                    <th>Data de Expedição</th>
+                                    <th>Data de Expiração</th>
+                                    <th>Data de Entrada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for(int i = 0 ; i < array_aux_visto.size() ; i++){
+                                %>
+                                    <tr>
+                                        <td><%out.print(pesquisa_visto[i].getRne());%></td>
+                                        <td><%out.print(pesquisa_visto[i].getClassificacao());%></td>
+                                        <td><%out.print(pesquisa_visto[i].getDataExped());%></td>
+                                        <td><%out.print(pesquisa_visto[i].getDataExpir());%></td>
+                                        <td><%out.print(pesquisa_visto[i].getDataEntr());%></td>
+                                    </tr>
+                                <%
+                                    }
+                                %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>    
+        <%          
+            } else {
+                out.print("a");
+            }
+        %>
+            
         </table>  
         
         

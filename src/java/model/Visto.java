@@ -53,14 +53,14 @@ public class Visto {
     }
     
     public void setRne(String rne){
-        if(rne == null)
+        if(rne.isEmpty())
             this.rne = "%";
         else
             this.rne = rne;
     }
     
     public void setClassificacao(String classificacao){
-        if(classificacao == null)
+        if(classificacao.isEmpty())
             this.classificacao = "%";
         else
             this.classificacao = classificacao;

@@ -36,14 +36,17 @@ public class consultaDAO {
 
         //Variavel temporaria que armazenarah um unico filme
         Pessoa p;
-        int i;
-        String aux;
-        int aux2;
-        int aux3;
-        String aux4;
-        try{            
-            st.execute("select * from tipo");
-
+        
+        String query;
+        try{           
+            query = "SELECT rne, nome, nacionalidade, estado_mora FROM pessoa WHERE ";
+            query+= "nome LIKE '" + nome + "' ";
+            query+= "AND rne LIKE '" + rne + "' ";
+            query+= "AND nacionalidade LIKE '" + nacionalidade + "' ";
+            query+= "AND estado_mora LIKE '" + estado_mora + "'";
+            
+            st.execute(query);
+            
             // Armazena o resultado da consulta na variavel 'rs'.
             rs = st.getResultSet();
 
@@ -54,12 +57,8 @@ public class consultaDAO {
             //   e false, caso contrario
 
             while (rs.next()){
-                i = rs.getInt("tipo");
-                aux = rs.getString("nome");
-                aux2 = rs.getInt("tempo_limite");
-                aux3 = rs.getInt("quantidade");
-                aux4 = rs.getString("descricao");
-                p = new Pessoa (rs.getString(1),rs.getString(2),rs.getString(3), rs.getString(4));
+               
+                p = new Pessoa (rs.getString("rne"),rs.getString("nome"),rs.getString("nacionalidade"), rs.getString("estado_mora"));
                 
                 //Armazena o novo filme no vetor
                 res.addElement(p);
@@ -81,15 +80,18 @@ public class consultaDAO {
 
         Visto v;
         
+        String query;
+        
         try{
-            st.execute( "select * from visto where rne like" + rne
-                            + "and cast(classificacao as text) like" + classificacao);
+            query =  "SELECT * FROM visto WHERE rne LIKE '" + rne;
+            query+= "' AND CAST(classificacao as text) LIKE '" + classificacao + "'";
+            st.execute(query);
             
             rs = st.getResultSet();
             
             while (rs.next()){
                 
-                v = new Visto (rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+                v = new Visto (rs.getString("rne"),rs.getString("classificacao"),rs.getString("data_exped"),rs.getString("data_expir"),rs.getString("data_entr"));
 
                 //Armazena o novo filme no vetor
                 res.addElement(v);
