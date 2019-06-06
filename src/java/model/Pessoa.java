@@ -15,6 +15,20 @@ public class Pessoa {
     String nacionalidade;
     String estado;
     
+    public Pessoa(){
+        this.rne = null;
+        this.nome = null;
+        this.nacionalidade = null;
+        this.estado = null;
+    }
+    
+    public Pessoa(String rne, String nome, String nacionalidade, String estado){
+        this.rne = rne;
+        this.nome = nome;
+        this.nacionalidade = nacionalidade;
+        this.estado = estado;
+    }
+    
     public String getRne(){
         return rne;
     }
@@ -32,18 +46,31 @@ public class Pessoa {
     }
     
     public void setRne(String rne){
-        this.rne = rne;
+        if (rne == null)
+            this.rne = "%";
+        else 
+            this.rne = rne;
     }
     
     public void setNome(String nome){
-        this.nome = nome;
+        if(nome == null)
+            this.nome = "%";
+        else
+            this.nome = nome;
     }
     
     public void setNacionalidade(String nacionalidade){
-        this.nacionalidade = nacionalidade;
+        if(nacionalidade == null)
+            this.nacionalidade = "%";
+        else
+            this.nacionalidade = nacionalidade;
     }
     
     public void setEstado(String estado){
-        this.estado = estado;
+        if(estado == null)
+            this.estado = "%";
+        else            
+            this.estado = estado;
     }
+    
 }

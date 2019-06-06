@@ -10,10 +10,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 import model.Pessoa;
 import model.Pessoa_c1;
 import model.Pessoa_c2;
 import model.Visto;
+import persistence.*;
+import java.util.Vector;
 
 /**
  *
@@ -33,6 +36,7 @@ public class Pesquisa extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        consultaDAO consulta = new consultaDAO();
         
         String c1_nome = request.getParameter("c1_nome");
         String str = request.getParameter("c1_class");
@@ -72,22 +76,18 @@ public class Pesquisa extends HttpServlet {
         // Pesquisa por pessoa
         else if(pessoa_rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){
             Pessoa new_user = new Pessoa();
+            new_user.setRne(pessoa_rne);
+            new_user.setNome(pessoa_nome);
+            new_user.setNacionalidade(pessoa_nac);
+            new_user.setEstado(pessoa_est);
             
-            if(pessoa_rne != null){
-                new_user.setRne(pessoa_rne);
-            }
+            Vector exibe = consulta.buscarPessoa(new_user.getRne(), new_user.getNome(), new_user.getNacionalidade(), new_user.getEstado());
             
-            if(pessoa_nome != null){
-                new_user.setNome(pessoa_nome);
-            }
-            
-            if(pessoa_nac != null){
-                new_user.setNacionalidade(pessoa_nac);
-            }
-            
-            if(pessoa_est != null){
-                new_user.setEstado(pessoa_est);
-            }
+            request.setAttribute("pesquisa_pessoa", exibe);
+    
+            RequestDispatcher dispatcher = null;
+            dispatcher = request.getRequestDispatcher("./Pesquisa.jsp");
+            dispatcher.forward(request, response);
         }
         
         // Pesquisa por visto
@@ -105,62 +105,11 @@ public class Pesquisa extends HttpServlet {
         
         // Caso as pesquisas tenham sido mal especificadas ##Verificar se isso sera tratado aqui##
         else{
-            response_writer.print(this.buildPage(""));
+            response.sendRedirect("./index.jsp");
         }
         response_writer.close();
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response); 
-        
-        
-        
-    }
-    
-    private String buildPage(String user) {
-    String page;
-    if (user.isEmpty()) {
-    page = "<!doctype html>"
-            + "<html>"
-            + "<head>"
-            + "<meta charset=\"UTF-8\">"         
-            + "</head>"
-            + "<body>"
-            + "<h1>Hello World</h1>"
-            + "</body>"
-            + "</html>";
-  } else {
-    page = "<!doctype html>"
-            + "<html>"
-            + "<head>"
-            + "<meta charset=\"UTF-8\">"         
-            + "</head>"
-            + "<body>"
-            + "<h1>Hello World</h1>"
-            + "</body>"
-            + "</html>";
-  }
- 
-  return page;
 }   
-    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet pesquisa</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet pesquisa at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-            
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -187,9 +136,3 @@ public class Pesquisa extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-}

@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Pessoa"%>
+<%@page import="model.Pessoa_c1"%>
+<%@page import="model.Pessoa_c2"%>
+<%@page import="model.Visto"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,7 +54,7 @@
             			<ul class="info">
             				<div class="div_flex">
     	                        <li >RNE: </li>
-    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
+    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="pessoa_rne">
                         	</div>
                         	<div class="div_flex">
     	                        <li >Nome: </li>
@@ -105,7 +111,7 @@
             			<ul class="info">
             				<div class="div_flex">
     	                        <li >RNE: </li>
-    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="rne">
+    	                        <input pattern="[a-zA-Z0-9]{1,10}$" type="text" name="visto_rne">
                         	</div>
                         	<div class="div_flex">
     	                        <li >Classificação: </li>
@@ -202,8 +208,36 @@
             </div>
         	<div class="linha">
         	</div>
-
         </section>
+        
+        <table border="2">
+            <tr>
+                <td>RNE</td>
+                <td>Nome</td>
+                <td>Nacionalidade</td>
+                <td>Estado</td>
+            </tr>
+            <%
+//                Vector array_aux = (Vector) request.getAttribute("pesquisa_pessoa"); 
+//                Object[] pesquisa_pessoa = array_aux.toArray(new Pessoa[array_aux.size()]);
+//                
+//                Pessoa[] teste = Arrays.copyOf(pesquisa_pessoa, pesquisa_pessoa.length, Pessoa[].class);
+//                                
+                for(int i = 0 ; i < 10 ; i++){
+
+            %>
+
+            <tr><td><%out.println("1");%></td></tr>
+
+
+            <%
+                }
+            %>
+        </table>  
+        
+        
+              
+        
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script language="javascript" type="text/javascript">
             function expandir(elemento){
