@@ -43,7 +43,7 @@ public class consultaDAO {
             query+= "nome LIKE '" + nome + "' ";
             query+= "AND rne LIKE '" + rne + "' ";
             query+= "AND nacionalidade LIKE '" + nacionalidade + "' ";
-            query+= "AND estado_mora LIKE '" + estado_mora + "'";
+            query+= "AND estado_mora LIKE '" + estado_mora + "' LIMIT 10000";
             
             st.execute(query);
             
@@ -84,7 +84,7 @@ public class consultaDAO {
         
         try{
             query =  "SELECT * FROM visto WHERE rne LIKE '" + rne;
-            query+= "' AND CAST(classificacao as text) LIKE '" + classificacao + "'";
+            query+= "' AND CAST(classificacao as text) LIKE '" + classificacao + "' LIMIT 10000";
             st.execute(query);
             
             rs = st.getResultSet();
@@ -110,14 +110,44 @@ public class consultaDAO {
 
         Pessoa_c1 p;
         
+        String query;
         try{
-            st.execute("select * from consulta1('%" + nome + "%', " + classificacao + ")");
+            query = "select * from consulta1('%" + nome + "%', " + classificacao + ")";
+            st.execute(query);
             
             rs = st.getResultSet();
             
             while (rs.next()){
                 
-                p = new Pessoa_c1 (rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5), rs.getString(6));
+                p = new Pessoa_c1 (rs.getString("rne"),rs.getString("nome"),rs.getString("classificacao"),rs.getString("data_expedicao"),rs.getString("data_expiracao"), rs.getString("estado_mora"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(p);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
+    }
+    
+    public Vector buscarC2(String tempoLimite, String estado){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Pessoa_c2 p;
+        
+        String query;
+        try{
+            query = "select * from consulta2('" + tempoLimite + "', '" + estado + "')";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                p = new Pessoa_c2 (rs.getString("rne"),rs.getString("nome"),rs.getString("nacionalidade"),rs.getString("data_expedicao"),rs.getString("data_expiracao"), rs.getString("tempo_limite"));
 
                 //Armazena o novo filme no vetor
                 res.addElement(p);

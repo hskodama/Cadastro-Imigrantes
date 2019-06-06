@@ -35,7 +35,7 @@ public class Pessoa_c1 {
         this.estado = estado;
     }
     
-    public String getrne(){
+    public String getRne(){
         return rne;
     }
     

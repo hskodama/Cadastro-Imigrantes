@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,6 +53,54 @@
                 </li>
             </ul>
         </nav>
+        
+        <%
+        Connection myConnection;
+        Statement st;
+        Class.forName("org.postgresql.Driver");
+        myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
+        st = myConnection.createStatement();
+        
+        ResultSet rs = null;
+        
+        //Vetor de elementos do tipo Filme
+        Vector res = new Vector();
+
+        //Variavel temporaria que armazenarah um unico filme
+        Pessoa p;
+        
+        String query;
+        try{           
+            query = "SELECT * FROM pessoa ";
+            
+            st.execute(query);
+            
+            // Armazena o resultado da consulta na variavel 'rs'.
+            rs = st.getResultSet();
+
+            // Percorre o resultado da consulta
+            // Por meio de sucessivas chamadas de 'rs.next()', as tuplas dos
+            //   resultados sao percorridas. Cada chamada desse metodo retorna
+            //   um valor booleano: true, se ainda houver tuplas nao percorridas
+            //   e false, caso contrario
+
+            while (rs.next()){
+               
+                p = new Pessoa (rs.getString("rne"),rs.getString("nome"),rs.getString("nacionalidade"), rs.getString("estado_mora"));
+                
+                //Armazena o novo filme no vetor
+                res.addElement(p);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        
+        Vector array_aux_pessoa = res; 
+        Object[] aux = array_aux_pessoa.toArray(new Pessoa[array_aux_pessoa.size()]);
+        Pessoa[] pesquisa_pessoa = Arrays.copyOf(aux, aux.length, Pessoa[].class);
+        %>
+        
         <div class="cont">
             <div id="tabela">
                 <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
@@ -61,215 +113,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr>
-                        <tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr><tr>
-                            <td>Luca Fioreto</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Itália</td>
-                            <td>São Paulo</td>
-                        </tr>
-                        <tr>
-                            <td>Maria Antonia</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Portugal</td>
-                            <td>Minas Gerais</td>
-                        </tr>
-                        <tr>
-                            <td>Helga Hofstader</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Alemanha</td>
-                            <td>Rio Grande do Sul</td>
-                        </tr>
-                        <tr>
-                            <td>Antoine Pavel</td>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>França</td>
-                            <td>Amazonas</td>
-                        </tr>
+                        <%
+                            for(int i = 0 ; i < array_aux_pessoa.size(); i++){
+                        %>
+                            <tr>
+                                <td><%out.print(pesquisa_pessoa[i].getRne());%></td>
+                                <td><%out.print(pesquisa_pessoa[i].getNome());%></td>
+                                <td><%out.print(pesquisa_pessoa[i].getNacionalidade());%></td>
+                                <td><%out.print(pesquisa_pessoa[i].getEstado());%></td>
+                            </tr>
+                        <%
+                            }
+                        %>
+
                     </tbody>
                 </table>
             </div>

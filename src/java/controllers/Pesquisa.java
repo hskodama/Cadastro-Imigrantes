@@ -75,13 +75,19 @@ public class Pesquisa extends HttpServlet {
         }
         
         // Pesquisa avancada 2
-//        else if(c2_data != null && c2_est != null){
-//            Pessoa_c2 new_user = new Pessoa_c2();
-//            new_user.setDataFiltro(c2_data);
-//            new_user.setEstado(c2_est);
-//            
-//            
-//        }
+        else if(c2_data != null && c2_est != null){
+            Pessoa_c2 new_user = new Pessoa_c2();
+            new_user.setTempo(c2_data);
+            new_user.setEstado(c2_est);
+            
+            Vector exibe = consulta.buscarC2(new_user.getInputTempo(), new_user.getInputEstado());
+            
+            request.setAttribute("pesquisa_c2", exibe);
+    
+            RequestDispatcher dispatcher = null;
+            dispatcher = request.getRequestDispatcher("./Pesquisa.jsp");
+            dispatcher.forward(request, response);
+        }
         
         // Pesquisa por pessoa
         else if(pessoa_rne != null || pessoa_nome != null || pessoa_nac != null || pessoa_est != null){

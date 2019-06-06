@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,6 +52,45 @@
                 </li>
             </ul>
         </nav>
+        
+        <%
+        Connection myConnection;
+        Statement st;
+        Class.forName("org.postgresql.Driver");
+        myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
+        st = myConnection.createStatement();
+        
+        ResultSet rs = null;
+        
+        //Vetor de elementos do tipo Filme
+        Vector res = new Vector();
+
+        //Variavel temporaria que armazenarah um unico filme
+        Visto v;
+        
+        String query;
+        try{
+            query =  "SELECT * FROM visto LIMIT 1000";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                v = new Visto (rs.getString("rne"),rs.getString("classificacao"),rs.getString("data_exped"),rs.getString("data_expir"),rs.getString("data_entr"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(v);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        Vector array_aux_visto = res; 
+        Object[] aux = array_aux_visto.toArray(new Visto[array_aux_visto.size()]);
+        Visto[] pesquisa_visto = Arrays.copyOf(aux, aux.length, Visto[].class);
+        %>
+        
         <div class="cont">
             <div id="tabela">
                 <table id="table_vistos" class="display hover table table-striped table-bordered" style="width: 90%">
@@ -55,35 +98,26 @@
                         <tr>
                             <th>RNE</th>
                             <th>Classificação</th>
-                            <th>Expedição</th>
-                            <th>Expiração</th>
+                            <th>Data de Expedição</th>
+                            <th>Data de Expiração</th>
+                            <th>Data de Entrada</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Turismo</td>
-                            <td>DD/MM/AAAA</td>
-                            <td>DD/MM/AAAA</td>
-                        </tr>
-                        <tr>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Estudante</td>
-                            <td>DD/MM/AAAA</td>
-                            <td>DD/MM/AAAA</td>
-                        </tr>
-                        <tr>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Trabalho</td>
-                            <td>DD/MM/AAAA</td>
-                            <td>DD/MM/AAAA</td>
-                        </tr>
-                        <tr>
-                            <td>XXX.XXX.XXX-XX</td>
-                            <td>Diplomático</td>
-                            <td>DD/MM/AAAA</td>
-                            <td>DD/MM/AAAA</td>
-                        </tr>
+                        <%
+                            for(int i = 0 ; i < array_aux_visto.size() ; i++){
+                        %>
+                            <tr>
+                                <td><%out.print(pesquisa_visto[i].getRne());%></td>
+                                <td><%out.print(pesquisa_visto[i].getClassificacao());%></td>
+                                <td><%out.print(pesquisa_visto[i].getDataExped());%></td>
+                                <td><%out.print(pesquisa_visto[i].getDataExpir());%></td>
+                                <td><%out.print(pesquisa_visto[i].getDataEntr());%></td>
+                            </tr>
+                        <%
+                            }
+                        %>
+
                     </tbody>
                 </table>
             </div>

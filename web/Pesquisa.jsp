@@ -164,18 +164,18 @@
                                 <li >Classificação: </li>
                                 <select required="required" name="c1_class">
                                     <option value=''>Selecione</option>
-                                    <option value='vitra'>Transporte</option>
-                                    <option value='vitur'>Turismo</option>
-                                    <option value='viper'>Permanente</option>
-                                    <option value='vicor'>Cortesia</option>
-                                    <option value='visof"'>Oficial</option>
-                                    <option value='vrt_1'>Cultural/Missão de Estudos</option>
-                                    <option value='vrt_2'>Negócios</option>
-                                    <option value='vrt_3'>Artista/Desportistas</option>
-                                    <option value='vrt_4'>Estudante</option>
-                                    <option value='vrt_5'>Trabalho</option>
-                                    <option value='vrt_6'>Jornalista</option>
-                                    <option value='vrt_7'>Religioso</option>
+                                    <option value='1'>Transporte</option>
+                                    <option value='2'>Turismo</option>
+                                    <option value='10'>Permanente</option>
+                                    <option value='11'>Cortesia</option>
+                                    <option value='12"'>Oficial</option>
+                                    <option value='3'>Cultural/Missão de Estudos</option>
+                                    <option value='4'>Negócios</option>
+                                    <option value='5'>Artista/Desportistas</option>
+                                    <option value='6'>Estudante</option>
+                                    <option value='7'>Trabalho</option>
+                                    <option value='8'>Jornalista</option>
+                                    <option value='9'>Religioso</option>
                                 </select>
                             </div>
                             <button style="float: right">
@@ -318,15 +318,97 @@
                     </div>
                 </div>    
         <%          
-            } else {
-                out.print("a");
             }
         %>
-            
-        </table>  
         
-        
+<!--    Tabela consulta avancada 1-->
+        <%
+            Vector array_aux_c1 = (Vector) request.getAttribute("pesquisa_c1"); 
+            if(array_aux_c1 != null){
+                Object[] aux = array_aux_c1.toArray(new Pessoa_c1[array_aux_c1.size()]);
+                Pessoa_c1[] pesquisa_c1 = Arrays.copyOf(aux, aux.length, Pessoa_c1[].class);
+        %>
+                <div class="cont">
+                    <div id="tabela">
+                        <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
+                            <thead>
+                                <tr>
+                                    <th>RNE</th>
+                                    <th>Nome</th>
+                                    <th>Classificação</th>
+                                    <th>Data de Expedição</th>
+                                    <th>Data de Expiração</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for(int i = 0 ; i < array_aux_c1.size() ; i++){
+                                %>
+                                    <tr>
+                                        <td><%out.print(pesquisa_c1[i].getRne());%></td>
+                                        <td><%out.print(pesquisa_c1[i].getNome());%></td>
+                                        <td><%out.print(pesquisa_c1[i].getClassificacao());%></td>
+                                        <td><%out.print(pesquisa_c1[i].getDataExped());%></td>
+                                        <td><%out.print(pesquisa_c1[i].getDataExpir());%></td>
+                                        <td><%out.print(pesquisa_c1[i].getEstado());%></td>
+                                    </tr>
+                                <%
+                                    }
+                                %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>    
+        <%          
+            }
+        %>
               
+<!--    Tabela consulta avancada 2-->
+        <%
+            Vector array_aux_c2 = (Vector) request.getAttribute("pesquisa_c2"); 
+            if(array_aux_c2 != null){
+                Object[] aux = array_aux_c2.toArray(new Pessoa_c2[array_aux_c2.size()]);
+                Pessoa_c2[] pesquisa_c2 = Arrays.copyOf(aux, aux.length, Pessoa_c2[].class);
+        %>
+                <div class="cont">
+                    <div id="tabela">
+                        <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
+                            <thead>
+                                <tr>
+                                    <th>RNE</th>
+                                    <th>Nome</th>
+                                    <th>Nacionalidade</th>
+                                    <th>Data de Expedição</th>
+                                    <th>Data de Expiração</th>
+                                    <th>Tempo Limite (Dias)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    for(int i = 0 ; i < array_aux_c2.size() ; i++){
+                                %>
+                                    <tr>
+                                        <td><%out.print(pesquisa_c2[i].getRne());%></td>
+                                        <td><%out.print(pesquisa_c2[i].getNome());%></td>
+                                        <td><%out.print(pesquisa_c2[i].getNacionalidade());%></td>
+                                        <td><%out.print(pesquisa_c2[i].getDataExped());%></td>
+                                        <td><%out.print(pesquisa_c2[i].getDataExpir());%></td>
+                                        <td><%out.print(pesquisa_c2[i].getTempoLimite());%></td>
+                                    </tr>
+                                <%
+                                    }
+                                %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>    
+        <%          
+            }
+        %>
+        
         
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script language="javascript" type="text/javascript">

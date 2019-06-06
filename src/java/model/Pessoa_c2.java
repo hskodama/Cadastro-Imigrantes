@@ -12,30 +12,34 @@ package model;
 public class Pessoa_c2 {
     String rne;
     String nome;
-    String classificacao;
+    String nacionalidade;
     String data_expedicao;
     String data_expiracao;
-    String estado;
+    String tempo_limite;
+    String input_tempo;
+    String input_estado;
     
     public Pessoa_c2(){
         this.rne = null;
         this.nome = null;
-        this.classificacao = null;
+        this.nacionalidade = null;
         this.data_expedicao = null;
         this.data_expiracao = null;
-        this.estado = null;
+        this.tempo_limite = null;
+        this.input_tempo = null;
+        this.input_estado = null;
     }
     
-    public Pessoa_c2(String rne, String nome, String classificacao, String data_exped, String data_expir, String estado){
+    public Pessoa_c2(String rne, String nome, String nacionalidade, String data_exped, String data_expir, String tempo_limite){
         this.rne = rne;
         this.nome = nome;
-        this.classificacao = classificacao;
+        this.nacionalidade = nacionalidade;
         this.data_expedicao = data_exped;
         this.data_expiracao = data_expir;
-        this.estado = estado;
+        this.tempo_limite = tempo_limite;
     }
     
-    public String getrne(){
+    public String getRne(){
         return rne;
     }
     
@@ -43,8 +47,8 @@ public class Pessoa_c2 {
         return nome;
     }
     
-    public String getClassificacao(){
-        return classificacao;
+    public String getNacionalidade(){
+        return nacionalidade;
     }
     
     public String getDataExped(){
@@ -55,11 +59,23 @@ public class Pessoa_c2 {
         return data_expiracao;
     }
     
-    public String getEstado(){
-        return estado;
+    public String getTempoLimite(){
+        return tempo_limite;
+    }
+    
+    public String getInputEstado(){
+        return input_estado;
+    }
+    
+    public String getInputTempo(){
+        return input_tempo;
+    }
+    
+    public void setTempo(String tempo){
+        this.input_tempo = tempo;
     }
     
     public void setEstado(String estado){
-        this.estado = estado;
+        this.input_estado = estado;
     }
 }
