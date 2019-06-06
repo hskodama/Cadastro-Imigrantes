@@ -140,8 +140,9 @@
             </div>
             <div class="tipo_margin">
                 <form method="POST" action="Pesquisa" class="collapsible" id="card_avacado1" onclick="expandir(id)">
-                    Pesquisa Avançada 1
+                    Pesquisa Avançada 1: Busca por Nome e Tipo de Visto
                     <div class="form_card" id="form_avanc1" style='display: none'>
+                        
                         <ul class="info">
                             <div class="div_flex">
                                 <li >Nome: </li>
@@ -174,7 +175,7 @@
             </div>
             <div class="tipo_margin">
                 <form method="POST" action="Pesquisa" class="collapsible" id="card_avancado2" onclick="expandir(id)">
-                    Pesquisa Avançada 2
+                    Pesquisa Avançada 2: Busca por Data de Expiração e Estado
                     <div class="form_card" id="form_avanc2" style='display: none'>
                         <ul class="info">
                             <div class="div_flex">
@@ -182,21 +183,36 @@
                                 <input required="required" type="date" name="c2_data">
                             </div>
                             <div class="div_flex">
-                                <li >Classificação: </li>
+                                <li >Estado: </li>
                                 <select required="required" name="c2_est">
                                     <option value=''>Selecione</option>
-                                    <option value='vitra'>Transporte</option>
-                                    <option value='vitur'>Turismo</option>
-                                    <option value='viper'>Permanente</option>
-                                    <option value='vicor'>Cortesia</option>
-                                    <option value='visof"'>Oficial</option>
-                                    <option value='vrt_1'>Cultural/Missão de Estudos</option>
-                                    <option value='vrt_2'>Negócios</option>
-                                    <option value='vrt_3'>Artista/Desportistas</option>
-                                    <option value='vrt_4'>Estudante</option>
-                                    <option value='vrt_5'>Trabalho</option>
-                                    <option value='vrt_6'>Jornalista</option>
-                                    <option value='vrt_7'>Religioso</option>
+    	                        	<option value='AC'>Acre</option>
+    	                        	<option value='AL'>Alagoas</option>
+    	                        	<option value='AP'>Amapá</option>
+    	                        	<option value='AM'>Amazonas</option>
+    	                        	<option value='BA'>BA</option>
+    	                        	<option value='CE'>Ceará</option>
+    	                        	<option value='DF'>Distrito Federal</option>
+    	                        	<option value='ES'>Espírito Santo</option>
+    	                        	<option value='GO'>Goiás</option>
+    	                        	<option value='MA'>Maranhão</option>
+    	                        	<option value='MT'>Mato Grosso</option>
+    	                        	<option value='MS'>Mato Grosso do Sul</option>
+    	                        	<option value='MG'>Minas Gerais</option>
+    	                        	<option value='PA'>Pará</option>
+    	                        	<option value='PB'>Paraíba</option>
+    	                        	<option value='PR'>Paraná</option>
+    	                        	<option value='PE'>Pernambuco</option>
+    	                        	<option value='PI'>Piauí</option>
+    	                        	<option value='RJ'>Rio de Janeiro</option>
+    	                        	<option value='RN'>Rio Grande do Norte</option>
+    	                        	<option value='RS'>Rio Grande do Sul</option>
+    	                        	<option value='RO'>Rondônia</option>
+    	                        	<option value='RR'>Roraima</option>
+    	                        	<option value='SC'>Santa Catarina</option>
+    	                        	<option value='SP'>São Paulo</option>
+    	                        	<option value='SE'>Sergipe</option>
+    	                        	<option value='TO'>Tocantins</option>
                                 </select>
                             </div>
                             <button style="float: right">
