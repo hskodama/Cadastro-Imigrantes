@@ -17,7 +17,7 @@
             
     </head>
     <body>
-        <nav class="navbar nav">
+        <nav class="navbar nav sticky-top">
             <ul>
                 <li><a class="nav-link" href="index.jsp">Home</a></li>
                 <li><a class="nav-link" href="Pessoas.jsp">Pessoas</a></li>
