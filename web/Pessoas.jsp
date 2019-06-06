@@ -71,7 +71,7 @@
         
         String query;
         try{           
-            query = "SELECT * FROM pessoa ";
+            query = "SELECT * FROM pessoa limit 1000";
             
             st.execute(query);
             
@@ -106,8 +106,8 @@
                 <table id="table_pessoas" class="display hover table table-striped table-bordered table-fixed" style="width: 90%">
                     <thead>
                         <tr>
-                            <th>Nome</th>
                             <th>RNE</th>
+                            <th>Nome</th>
                             <th>Nacionalidade</th>
                             <th>Estado</th>
                         </tr>
