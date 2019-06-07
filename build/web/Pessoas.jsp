@@ -49,7 +49,7 @@
                     <a class="nav-link" href="Pesquisa.jsp">Pesquisas</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="Visto_Pessoa.jsp">Visualização</a> 
+                    <a class="nav-link" href="Visualizacao.jsp">Visualização</a> 
                 </li>
             </ul>
         </nav>
