@@ -16,7 +16,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
-    background: #f6f5ae;;
+    
 }
  
 .nav {
@@ -281,7 +281,7 @@ select{
 }
 
 #imagemPessoa:hover {
-    background-color:#ddd1c7;
+    background-color: #f6f5ae;
     opacity: 1;
     border-radius:25px;
     
