@@ -29,6 +29,11 @@
             $(document).ready( function () {
                 $('#table_pessoas').DataTable();
             } );
+            
+            $('table').on('click', 'tr', function() {
+                //your stuff 
+                window.location.replace("http://stackoverflow.com");
+            });
         </script>
     </head>
     <body>

@@ -127,7 +127,14 @@ public class Pesquisa extends HttpServlet {
         }
         response_writer.close();
     }
-}   
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            String rne = request.getParameter("rne");
+            String a = rne;
+    }
+}
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
