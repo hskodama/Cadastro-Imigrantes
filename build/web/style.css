@@ -271,7 +271,23 @@ select{
     left: 0;
     width:600px;
     height:600px;
-    /*transform: rotate(180deg);*/
+}
+
+#stamp {
+    position: absolute;
+    left: -50px;
+    width:400px;
+    height:600px;
+    transform: rotate(30deg);
+}
+
+#maps {
+    margin-top: 50px;
+    position: absolute;
+    right: -80px;
+    width:800px;
+    height:437px;
+    transform: rotate(-30deg);
 }
 
 @-webkit-keyframes fadein {

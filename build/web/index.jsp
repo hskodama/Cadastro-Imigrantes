@@ -38,12 +38,14 @@
         </div>
         
         <div class="Tipo_Visto" id="imagemVisto">
+            <img src="stamp.png" id="stamp">
             <h2>10+ Tipos de Visto</h2>
             <h3>Consulte os detalhes, limites estipulados e a descrição dos vistos</h3>
             <img src="https://images.unsplash.com/photo-1532188142562-df556b861e6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Image Example" style="Width:60%;height:400px">
         </div>
         
         <div class="Mapas" id="imagemMapa">
+            <img src="maps.png" id="maps">
             <h2>Mapas e Gráficos</h2>
             <h3 class='Mapax_Texto'>Disponibilização de diversos mapas informativos, como a concentração de imigrantes em dado estado, localização de vistos expirados, diferença no tipo de visto, etc.</h3>
             <img src="https://images.unsplash.com/photo-1528707775707-2201621ab051?ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" alt="Image Example" style="Width:60%;height:400px">
