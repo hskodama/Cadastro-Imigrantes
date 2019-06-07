@@ -25,27 +25,27 @@
             </ul>
         </nav>
         
-        <div class="Intro">
+        <div id="Intro">
             <h1 class="titulo">Cadastro de Estrangeiros</h1>
         </div>
         
-        <div class="Pessoas">
+        <div class="Pessoas" id="imagemPessoa">
             <h2>Visualize os seus e demais cadastros</h2>
-            <img src="https://images.unsplash.com/photo-1528920304568-7aa06b3dda8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Image Example" style="Width:60%;height:400px">
+            <img src="https://images.unsplash.com/photo-1457694587812-e8bf29a43845?ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80" alt="Image Example" style="Width:60%;height:400px">
             <p>1,000,000 +</p>
             <h3>Cadastros totais de pessoas</h3>
         </div>
         
-        <div class="Tipo_Visto">
+        <div class="Tipo_Visto" id="imagemVisto">
             <h2>10+ Tipos de Visto</h2>
             <h3>Consulte os detalhes, limites estipulados e a descrição dos vistos</h3>
-            <img src="https://images.unsplash.com/photo-1528920304568-7aa06b3dda8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Image Example" style="Width:60%;height:400px">
+            <img src="https://images.unsplash.com/photo-1532188142562-df556b861e6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Image Example" style="Width:60%;height:400px">
         </div>
         
-        <div class="Mapas">
+        <div class="Mapas" id="imagemMapa">
             <h2>Mapas e Gráficos</h2>
             <h3 class='Mapax_Texto'>Disponibilização de diversos mapas informativos, como a concentração de imigrantes em dado estado, localização de vistos expirados, diferença no tipo de visto, etc.</h3>
-            <img src="https://images.unsplash.com/photo-1528920304568-7aa06b3dda8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Image Example" style="Width:60%;height:400px">
+            <img src="https://images.unsplash.com/photo-1528707775707-2201621ab051?ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" alt="Image Example" style="Width:60%;height:400px">
         </div>
         
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
