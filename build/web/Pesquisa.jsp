@@ -142,10 +142,10 @@
     	                        	<option value='6'>Cultural/Missão de Estudos</option>
     	                        	<option value='7'>Negócios</option>
     	                        	<option value='8'>Artista/Desportistas</option>
-                                 <option value='9'>Estudante</option>
-                                 <option value='10'>Trabalho</option>
-                                 <option value='11'>Jornalista</option>
-                                 <option value='12'>Religioso</option>
+                                     <option value='9'>Estudante</option>
+                                     <option value='10'>Trabalho</option>
+                                     <option value='11'>Jornalista</option>
+                                     <option value='12'>Religioso</option>
     	                        </select>
                             </div>
                             <button style="float: right">

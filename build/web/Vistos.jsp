@@ -126,8 +126,7 @@
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script type='text/javascript'>
             function teste(rne){
-                window.location.replace("/TrabalhoIntegrado/Visto_Pessoa.jsp?rne=" + rne);                    
-                <!--alert(rne)-->
+                window.location.replace("/TrabalhoIntegrado/Visto_Pessoa.jsp?rne=" + rne);
             }
         </script> 
     </body>

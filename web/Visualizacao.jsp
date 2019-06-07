@@ -29,20 +29,27 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Tipo');
+        data.addColumn('number', 'Quantidade');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Transporte',                  1     ],
+          ['Turismo',                     2     ],
+          ['Permanente',                  5     ],
+          ['Cortesia',                    6     ],
+          ['Oficial',                     9     ],
+          ['Cultural/Missão de Estudos',  2     ],
+          ['Negócios',                    6     ],
+          ['Artista/Desportistas',        7     ],
+          ['Estudante',                   3     ],
+          ['Trabalho',                    7     ],
+          ['Jornalista',                  4     ],
+          ['Religioso',                   7     ]
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':1400,
-                       'height':1300};
+        var options = {'title':'Quantidade de passaportes por tipo',
+                       'width':900,
+                       'height':900};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

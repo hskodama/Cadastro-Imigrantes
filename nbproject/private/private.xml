@@ -3,24 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <file>file:/Users/hskodama/Documents/Web/Cadastro-Imigrantes/src/java/persistence/consultaDAO.java</file>
-            <file>file:/Users/hskodama/Documents/Web/Cadastro-Imigrantes/web/index.jsp</file>
-            <file>file:/Users/hskodama/Documents/Web/Cadastro-Imigrantes/src/java/model/Pessoa_c1.java</file>
-            <file>file:/Users/hskodama/Documents/Web/Cadastro-Imigrantes/src/java/controllers/Pesquisa.java</file>
-            <file>file:/Users/hskodama/Documents/Web/Cadastro-Imigrantes/src/java/model/Pessoa_c2.java</file>
-=======
-=======
->>>>>>> 154efa7e906a8b7252c5a562d2363e2f2f7cfa16
-            <file>file:/C:/Users/Arthur/Documents/GitHub/Cadastro-Imigrantes/src/java/persistence/consultaDAO.java</file>
-            <file>file:/C:/Users/Arthur/Documents/GitHub/Cadastro-Imigrantes/web/Pesquisa.jsp</file>
-            <file>file:/C:/Users/Arthur/Documents/GitHub/Cadastro-Imigrantes/web/Pessoas.jsp</file>
-            <file>file:/C:/Users/Arthur/Documents/GitHub/Cadastro-Imigrantes/src/java/model/Pessoa.java</file>
-<<<<<<< HEAD
->>>>>>> 154efa7e906a8b7252c5a562d2363e2f2f7cfa16
-=======
->>>>>>> 154efa7e906a8b7252c5a562d2363e2f2f7cfa16
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Vistos.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Visualizacao.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Visto_Pessoa.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/index.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Tipo_Visto.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Pesquisa.jsp</file>
+            <file>file:/home/gabriel/Documentos/GitHub/Cadastro-Imigrantes/web/Pessoas.jsp</file>
         </group>
     </open-files>
 </project-private>
