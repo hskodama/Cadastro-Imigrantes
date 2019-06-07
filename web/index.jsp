@@ -26,6 +26,7 @@
         </nav>
         
         <div id="Intro">
+            <img src="dove-svg-flock-5-transparent.png" id="passaros">
             <h1 class="titulo">Cadastro de Estrangeiros</h1>
         </div>
         
