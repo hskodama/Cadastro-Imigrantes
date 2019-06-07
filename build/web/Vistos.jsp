@@ -107,7 +107,7 @@
                         <%
                             for(int i = 0 ; i < array_aux_visto.size() ; i++){
                         %>
-                            <tr>
+                            <tr onclick='teste("<%out.print(pesquisa_visto[i].getRne());%>")'>
                                 <td><%out.print(pesquisa_visto[i].getRne());%></td>
                                 <td><%out.print(pesquisa_visto[i].getClassificacao());%></td>
                                 <td><%out.print(pesquisa_visto[i].getDataExped());%></td>
@@ -124,5 +124,11 @@
 
         </div>
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+        <script type='text/javascript'>
+            function teste(rne){
+                window.location.replace("/TrabalhoIntegrado/Visto_Pessoa.jsp?rne=" + rne);                    
+                <!--alert(rne)-->
+            }
+        </script> 
     </body>
 

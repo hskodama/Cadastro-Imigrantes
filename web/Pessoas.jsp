@@ -116,7 +116,7 @@
                         <%
                             for(int i = 0 ; i < array_aux_pessoa.size(); i++){
                         %>
-                            <tr>
+                            <tr onclick='teste("<%out.print(pesquisa_pessoa[i].getRne());%>")'>
                                 <td><%out.print(pesquisa_pessoa[i].getRne());%></td>
                                 <td><%out.print(pesquisa_pessoa[i].getNome());%></td>
                                 <td><%out.print(pesquisa_pessoa[i].getNacionalidade());%></td>
@@ -128,6 +128,13 @@
 
                     </tbody>
                 </table>
+                        
+                <script type='text/javascript'>
+                    function teste(rne){
+                        window.location.replace("/TrabalhoIntegrado/Visto_Pessoa.jsp?rne=" + rne);                    
+                        <!--alert(rne)-->
+                    }
+                </script> 
             </div>
         </div>
         
