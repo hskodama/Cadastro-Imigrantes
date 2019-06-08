@@ -40,9 +40,9 @@ public class consultaDAO {
         String query;
         try{           
             query = "SELECT rne, nome, nacionalidade, estado_mora FROM pessoa WHERE ";
-            query+= "nome LIKE '" + nome + "' ";
-            query+= "AND rne LIKE '" + rne + "' ";
-            query+= "AND nacionalidade LIKE '" + nacionalidade + "' ";
+            query+= "nome LIKE '%" + nome + "%' ";
+            query+= "AND rne LIKE '%" + rne + "%' ";
+            query+= "AND nacionalidade LIKE '%" + nacionalidade + "%' ";
             query+= "AND estado_mora LIKE '" + estado_mora + "' LIMIT 10000";
             
             st.execute(query);
@@ -83,7 +83,7 @@ public class consultaDAO {
         String query;
         
         try{
-            query =  "SELECT * FROM visto WHERE rne LIKE '" + rne;
+            query =  "SELECT * FROM visto WHERE rne LIKE '%" + rne+"%";
             query+= "' AND CAST(classificacao as text) LIKE '" + classificacao + "' LIMIT 10000";
             st.execute(query);
             
@@ -102,7 +102,35 @@ public class consultaDAO {
         }
         return res;  
     }
-    
+    public Vector buscarTipo(){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Tipo t;
+        
+        String query;
+        
+        try{
+            query =  "SELECT tipo,quantidade FROM tipo";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                t = new Tipo (rs.getString("tipo"),rs.getString("quantidade"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(t);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
+    }
+
     public Vector buscarC1(String nome, String classificacao){
         ResultSet rs = null;
         

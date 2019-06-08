@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Tipo"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,50 +17,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Tipo');
-        data.addColumn('number', 'Quantidade');
-        data.addRows([
-          ['Transporte',                  1     ],
-          ['Turismo',                     2     ],
-          ['Permanente',                  5     ],
-          ['Cortesia',                    6     ],
-          ['Oficial',                     9     ],
-          ['Cultural/Missão de Estudos',  2     ],
-          ['Negócios',                    6     ],
-          ['Artista/Desportistas',        7     ],
-          ['Estudante',                   3     ],
-          ['Trabalho',                    7     ],
-          ['Jornalista',                  4     ],
-          ['Religioso',                   7     ]
-        ]);
-
-        // Set chart options
-        var options = {'title':'Quantidade de passaportes por tipo',
-                       'width':900,
-                       'height':900};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-      
-    </script>
-    
+      $.post("Visualiza");
+    </script>   
     <script>
         google.load('visualization', '1', {
       'packages': ['geochart', 'table']
@@ -154,5 +117,57 @@
             <div id="chart_div2"></div>
         </div>
     <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+         <%
+            Vector array_aux_Tipo = (Vector) request.getAttribute("pesquisa_Tipo");
+          %>
+            alert(<%out.print(array_aux_Tipo);%>);
+            <%
+            if(array_aux_Tipo != null){
+                Object[] aux = array_aux_Tipo.toArray(new Tipo[array_aux_Tipo.size()]);
+                Tipo[] pesquisa_Tipo = Arrays.copyOf(aux, aux.length,Tipo[].class);
+              }
+            
+        %>
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Tipo');
+        data.addColumn('number', 'Quantidade');
+        data.addRows([
+          ['Transporte',                  1     ],
+          ['Turismo',                     2     ],
+          ['Permanente',                  5     ],
+          ['Cortesia',                    6     ],
+          ['Oficial',                     9     ],
+          ['Cultural/Missão de Estudos',  2     ],
+          ['Negócios',                    6     ],
+          ['Artista/Desportistas',        7     ],
+          ['Estudante',                   3     ],
+          ['Trabalho',                    7     ],
+          ['Jornalista',                  4     ],
+          ['Religioso',                   7     ]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Quantidade de passaportes por tipo',
+                       'width':900,
+                       'height':900};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
   </body>
 </html>

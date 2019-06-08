@@ -75,7 +75,7 @@
                         	</div>
                         	<div class="div_flex">
     	                        <li >Nome: </li>
-    	                        <input pattern="^[a-zA-z]{1,40}$" type="text" name="pessoa_nome">
+    	                        <input pattern="^[a-zA-z ]{1,40}$" type="text" name="pessoa_nome">
                             </div>
                             <div class="div_flex">
     	                        <li >Nacionalidade:</li>

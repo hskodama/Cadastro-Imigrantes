@@ -4,9 +4,17 @@
         <servlet-name>Pesquisa</servlet-name>
         <servlet-class>controllers.Pesquisa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Visualiza</servlet-name>
+        <servlet-class>controllers.Visualiza</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Pesquisa</servlet-name>
         <url-pattern>/Pesquisa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Visualiza</servlet-name>
+        <url-pattern>/Visualiza</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
