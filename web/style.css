@@ -74,10 +74,12 @@ body {
     align-items: center;
 }
 .cont {
-    position: relative;
-    max-width: 95%;
-    top: 50px;
-    margin-left: 20px;
+    /*position: relative;*/
+    /*max-width: 95%;*/
+    /*top: 50px;*/
+    /*margin-left: 20px;*/
+    margin: 0 auto;
+    width: 50%;
 }
 
 .item {
@@ -439,3 +441,12 @@ select{
     width: 50%;
     display: inline-block;
 }
+
+.header_visu{
+    margin-top: 20%;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+

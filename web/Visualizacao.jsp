@@ -83,14 +83,19 @@
                 <li><a class="active" href="Visualizacao.jsp">Visualização</a></li>
             </ul>
         </nav>
+      
+        
         <div class="cont">
+            <h1 class='header_visu'>Quantidade de passaportes por tipo</h1>
         <!--Div that will hold the pie chart-->
-            <div id="chart_div"></div>
+        <div id="chart_div"></div>
         </div>
       
-        <div class="cont">
+        
+        <div class="cont header_visu">
+            <h1 class='header_visu'>Mapa do Brasil: Número de pessoas por estado</h1>
 <!--        Div that will hold the pie chart-->
-            <div id="chart_div2"></div>
+            <div id="chart_div2" class='header_visu'></div>
         </div>
 
     <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
@@ -138,9 +143,10 @@
         ]);
 
         // Set chart options
-        var options = {'title':'Quantidade de passaportes por tipo',
+        var options = {
                        'width':900,
-                       'height':900};
+                       'height':900,
+                       };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
