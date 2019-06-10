@@ -19,59 +19,60 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript">
-      $.post("Visualiza");
+      function visu(){
+        $.post("Visualiza");
+      }
     </script>   
     <script>
         google.load('visualization', '1', {
       'packages': ['geochart', 'table']
-  });
-  google.setOnLoadCallback(drawRegionsMap);
-  
-  function drawRegionsMap() {
-      var data = google.visualization.arrayToDataTable([
-      // Results For US States
-      // State format must be "BR-**"
-      // US represents region, while the ** section represents the individual state 
+      });
+      google.setOnLoadCallback(drawRegionsMap);
+      
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+        // Results For US States
+        // State format must be "BR-**"
+        // US represents region, while the ** section represents the individual state 
           ['State', 'Views'],
           ['BR-SP', 300],
           ['BR-PE', 300],
           ['BR-AM', 400]
+        ]);
   
-      ]);
-  
-      var view = new google.visualization.DataView(data)
-      view.setColumns([0, 1])
-  
-      var options = {
-          region: 'BR',
-          resolution: 'provinces',
-          width: 556,
-          height: 347
+        var view = new google.visualization.DataView(data)
+        view.setColumns([0, 1])
+    
+        var options = {
+            region: 'BR',
+            resolution: 'provinces',
+            width: 556,
+            height: 347
+        };
+    
+        var chart = new google.visualization.GeoChart(
+        document.getElementById('chart_div2'));
+        chart.draw(data, options);
+    
+        var geochart = new google.visualization.GeoChart(
+        document.getElementById('chart_div2'));
+        var options = {
+            region: 'BR',
+            resolution: 'provinces',
+            width: 700,
+            height: 700,
+            colorAxis: {
+            colors: ['#acb2b9', '#2f3f4f']
+            } // orange to blue 
+        };
+        geochart.draw(data, options);
+    
       };
-  
-      var chart = new google.visualization.GeoChart(
-      document.getElementById('chart_div2'));
-      chart.draw(data, options);
-  
-      var geochart = new google.visualization.GeoChart(
-      document.getElementById('chart_div2'));
-      var options = {
-          region: 'BR',
-          resolution: 'provinces',
-          width: 700,
-          height: 700,
-          colorAxis: {
-          colors: ['#acb2b9', '#2f3f4f']
-          } // orange to blue 
-      };
-      geochart.draw(data, options);
-  
-  };
     </script>
     
   </head>
 
-  <body>
+  <body onload="visu()">
         <nav class="navbar nav">
             <ul>
                 <li><a class="nav-link" href="index.jsp">Home</a></li>
