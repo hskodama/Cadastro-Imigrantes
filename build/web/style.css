@@ -78,6 +78,8 @@ body {
     max-width: 95%;
     top: 50px;
     margin-left: 20px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .item {
@@ -439,3 +441,11 @@ select{
     width: 50%;
     display: inline-block;
 }
+
+.header_visu{
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+

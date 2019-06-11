@@ -40,7 +40,7 @@
             </div>
 
             <div class="tipo_margin">
-            <button class="collapsible">Visto Temporário</button>
+            <button class="collapsible">Visto de Turismo</button>
                 <div class="content">
                   <h4>Descrição:</h4>
                   <p>&emsp;Este visto não apresenta finalidade migratória. Destina-se a estadias com caráter apenas de visita ou recreativo. Autoriza a estada em território nacional por no máximo 90 (noventa) dias, podendo ser prorrogável por uma única vez, por igual período. Este pedido de prorrogação deve ser encaminhado pessoalmente ao Departamento de Polícia Federal, antes do vencimento do prazo de validade do visto concedido no exterior.</p>

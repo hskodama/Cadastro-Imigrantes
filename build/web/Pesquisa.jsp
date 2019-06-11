@@ -171,9 +171,6 @@
                                     <option value=''>Selecione</option>
                                     <option value='1'>Transporte</option>
                                     <option value='2'>Turismo</option>
-                                    <option value='10'>Permanente</option>
-                                    <option value='11'>Cortesia</option>
-                                    <option value='12"'>Oficial</option>
                                     <option value='3'>Cultural/Missão de Estudos</option>
                                     <option value='4'>Negócios</option>
                                     <option value='5'>Artista/Desportistas</option>
@@ -181,6 +178,9 @@
                                     <option value='7'>Trabalho</option>
                                     <option value='8'>Jornalista</option>
                                     <option value='9'>Religioso</option>
+                                    <option value='10'>Permanente</option>
+                                    <option value='11'>Cortesia</option>
+                                    <option value='12'>Oficial</option>
                                 </select>
                             </div>
                             <button style="float: right">

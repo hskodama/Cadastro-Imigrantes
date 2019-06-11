@@ -112,7 +112,9 @@ public class consultaDAO {
         String query;
         
         try{
-            query =  "SELECT tipo,quantidade FROM tipo";
+            //query =  "SELECT classificacao,count(*) from visto group by classificacao order by count(*) DESC";
+            query =  "SELECT tipo,quantidade FROM tipo order by quantidade DESC";
+            
             st.execute(query);
             
             rs = st.getResultSet();
@@ -127,6 +129,35 @@ public class consultaDAO {
             
             }catch(SQLException e){
             e.printStackTrace();
+        }
+        return res;  
+    }
+
+    public Vector buscarEstado(){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Estado t;
+        
+        String query;
+        
+        try{
+            query =  "SELECT estado_mora,count(*) from pessoa group by estado_mora";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                t = new Estado (rs.getString("estado_mora"),rs.getString("count"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(t);
+            }
+            
+            }catch(SQLException e){
+                e.printStackTrace();
         }
         return res;  
     }

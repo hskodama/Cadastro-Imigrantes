@@ -14,7 +14,46 @@ public class Tipo {
     private String quantidade;
 
     public Tipo(String tipo, String quantidade) {
-        this.tipo = tipo;
+        switch(tipo)
+        {
+            case "1":
+                this.tipo = "Transporte";
+            break;
+            case "2":
+                this.tipo = "Turismo";
+            break;
+            case "3":
+                this.tipo = "Cultural/Missão de Estudos";
+            break;
+            case "4":
+                this.tipo = "Negócios";
+            break;
+            case "5":
+                this.tipo = "Artista/Desportistas";
+            break;
+            case "6":
+                this.tipo = "Estudante";
+            break;
+            case "7":
+                this.tipo = "Trabalho";
+            break;
+            case "8":
+                this.tipo = "Jornalista";
+            break;
+            case "9":
+                this.tipo = "Religioso";
+            break;
+            case "10":
+                this.tipo = "Permanente";
+            break;
+            case "11":
+                this.tipo = "Cortesia";
+            break;
+            case "12":
+                this.tipo = "Oficial";
+            break;
+
+        }                                 
         this.quantidade = quantidade;
     }
 

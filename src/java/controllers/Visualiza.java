@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import model.Tipo;
+import model.Estado;
 import persistence.*;
 import java.util.Vector;
 
@@ -29,8 +30,10 @@ public class Visualiza extends HttpServlet {
         PrintWriter response_writer = response.getWriter();
         
         Vector exibe = consulta.buscarTipo();
+        Vector exibeE = consulta.buscarEstado();
         
         request.setAttribute("pesquisa_Tipo", exibe);
+        request.setAttribute("pesquisa_Estado", exibeE);
 
         RequestDispatcher dispatcher = null;
         dispatcher = request.getRequestDispatcher("./Visualizacao.jsp");
@@ -41,5 +44,19 @@ public class Visualiza extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        consultaDAO consulta = new consultaDAO(); 
+        
+        PrintWriter response_writer = response.getWriter();
+        
+        Vector exibe = consulta.buscarTipo();
+        Vector exibeE = consulta.buscarEstado();
+        
+        request.setAttribute("pesquisa_Tipo", exibe);
+        request.setAttribute("pesquisa_Estado", exibeE);
+
+        RequestDispatcher dispatcher = null;
+        dispatcher = request.getRequestDispatcher("./Visualizacao.jsp");
+        dispatcher.forward(request, response);
+        response_writer.close();
     }
 }
