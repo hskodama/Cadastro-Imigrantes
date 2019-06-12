@@ -54,7 +54,7 @@
               <div id="chart_div" style="width: 100%; height: 500px;"></div>
 
               <h3 class='header_visu'>Mapa do Brasil: Número de pessoas por estado</h3>
-              <div id="chart_div2" style="width: 100%; height: 500px;padding-bottom: : 20px;"></div>
+              <div id="chart_div2" style="width: 100%; height: 500px;padding-bottom: 20px;"></div>
         </div>
 
     <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>

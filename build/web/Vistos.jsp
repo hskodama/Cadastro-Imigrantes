@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
 <%@page import="java.util.Vector"%>
-<%@page import="java.sql.*"%>
 <%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
@@ -24,12 +23,22 @@
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         
         <script>
-            $(document).ready( function () {
-                $('#table_vistos').DataTable();
-            } );
+            function visu(){
+            //$.post("Vistos");
+            var postFormStr = "<form method='POST' action='Vistos'>\n";
+            postFormStr += "</form>";
+            var formElement = $(postFormStr);
+            $('body').append(formElement);
+            $(formElement).submit();  
+          }
+          function carrega(){
+            <%if (request.getAttribute("pesquisa_Vistos")== null){%>
+              visu();
+            <%}%>
+          }
         </script>
     </head>
-    <body>
+    <body onload="carrega()">
         <nav class="navbar nav sticky-top">
             <ul>
                 <li>
@@ -54,41 +63,10 @@
         </nav>
         
         <%
-        Connection myConnection;
-        Statement st;
-        Class.forName("org.postgresql.Driver");
-        myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
-        st = myConnection.createStatement();
-        
-        ResultSet rs = null;
-        
-        //Vetor de elementos do tipo Filme
-        Vector res = new Vector();
-
-        //Variavel temporaria que armazenarah um unico filme
-        Visto v;
-        
-        String query;
-        try{
-            query =  "SELECT * FROM visto LIMIT 1000";
-            st.execute(query);
-            
-            rs = st.getResultSet();
-            
-            while (rs.next()){
-                
-                v = new Visto (rs.getString("rne"),rs.getString("classificacao"),rs.getString("data_exped"),rs.getString("data_expir"),rs.getString("data_entr"));
-
-                //Armazena o novo filme no vetor
-                res.addElement(v);
-            }
-            
-            }catch(SQLException e){
-            e.printStackTrace();
-        }
-        Vector array_aux_visto = res; 
-        Object[] aux = array_aux_visto.toArray(new Visto[array_aux_visto.size()]);
-        Visto[] pesquisa_visto = Arrays.copyOf(aux, aux.length, Visto[].class);
+            Vector array_aux_Vistos = (Vector) request.getAttribute("pesquisa_Vistos");
+            if(array_aux_Vistos != null){
+                Object[] aux = array_aux_Vistos.toArray(new Visto[array_aux_Vistos.size()]);
+                Visto[] pesquisa_visto = Arrays.copyOf(aux, aux.length,Visto[].class);      
         %>
         
         <div class="cont">
@@ -105,7 +83,7 @@
                     </thead>
                     <tbody>
                         <%
-                            for(int i = 0 ; i < array_aux_visto.size() ; i++){
+                            for(int i = 0 ; i < array_aux_Vistos.size() ; i++){
                         %>
                             <tr onclick='teste("<%out.print(pesquisa_visto[i].getRne());%>")'>
                                 <td><%out.print(pesquisa_visto[i].getRne());%></td>
@@ -120,6 +98,7 @@
 
                     </tbody>
                 </table>
+                <%}%>
             </div>
 
         </div>

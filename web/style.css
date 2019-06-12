@@ -447,5 +447,9 @@ select{
 
 }
 
+tbody tr {
+    cursor: pointer;
+}
+
 
 

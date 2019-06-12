@@ -20,7 +20,7 @@ public class consultaDAO {
     public consultaDAO(){
         try {
             Class.forName("org.postgresql.Driver");
-            myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
+            myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/cadastroestrangeiro","web_user","1234");
             st = myConnection.createStatement();
         }
         catch(Exception e){
@@ -210,6 +210,64 @@ public class consultaDAO {
 
                 //Armazena o novo filme no vetor
                 res.addElement(p);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
+    }
+    
+    public Vector buscarPessoaGeral(){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Pessoa p;
+        
+        String query;
+        
+        try{
+            query =  "select rne, nome, nacionalidade, estado_mora from pessoa limit 1000";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                p = new Pessoa (rs.getString("rne"),rs.getString("nome"),rs.getString("nacionalidade"),rs.getString("estado_mora"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(p);
+            }
+            
+            }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return res;  
+    }
+    
+    public Vector buscarVistosGeral(){
+        ResultSet rs = null;
+        
+        Vector res = new Vector();
+
+        Visto v;
+        
+        String query;
+        
+        try{
+            query =  "select * from visto limit 1000";
+            st.execute(query);
+            
+            rs = st.getResultSet();
+            
+            while (rs.next()){
+                
+                v = new Visto (rs.getString("rne"),rs.getString("classificacao"),rs.getString("data_exped"),rs.getString("data_expir"), rs.getString("data_entr"));
+
+                //Armazena o novo filme no vetor
+                res.addElement(v);
             }
             
             }catch(SQLException e){

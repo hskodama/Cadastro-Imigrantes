@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
 <%@page import="java.util.Vector"%>
-<%@page import="java.sql.*"%>
 <%@page import="java.util.Arrays"%>
 <!DOCTYPE html>
 <html>
@@ -24,13 +23,23 @@
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         
         <script>
-            $(document).ready( function () {
-                $('#table_pessoas').DataTable();
-            } );
+            function visu(){
+            //$.post("Pessoas");
+            var postFormStr = "<form method='POST' action='Pessoas'>\n";
+            postFormStr += "</form>";
+            var formElement = $(postFormStr);
+            $('body').append(formElement);
+            $(formElement).submit();  
+          }
+          function carrega(){
+            <%if (request.getAttribute("pesquisa_Pessoas")== null){%>
+              visu();
+            <%}%>
+          }
         </script>
 
     </head>
-    <body>
+    <body onload="carrega()">
         <nav class="navbar nav sticky-top">
             <ul>
                 <li>
@@ -54,51 +63,11 @@
             </ul>
         </nav>
         
-        <%
-        Connection myConnection;
-        Statement st;
-        Class.forName("org.postgresql.Driver");
-        myConnection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/CadastroEstrangeiro","postgres","123456");
-        st = myConnection.createStatement();
-        
-        ResultSet rs = null;
-        
-        //Vetor de elementos do tipo Filme
-        Vector res = new Vector();
-
-        //Variavel temporaria que armazenarah um unico filme
-        Pessoa p;
-        
-        String query;
-        try{           
-            query = "SELECT * FROM pessoa limit 1000";
-            
-            st.execute(query);
-            
-            // Armazena o resultado da consulta na variavel 'rs'.
-            rs = st.getResultSet();
-
-            // Percorre o resultado da consulta
-            // Por meio de sucessivas chamadas de 'rs.next()', as tuplas dos
-            //   resultados sao percorridas. Cada chamada desse metodo retorna
-            //   um valor booleano: true, se ainda houver tuplas nao percorridas
-            //   e false, caso contrario
-
-            while (rs.next()){
-               
-                p = new Pessoa (rs.getString("rne"),rs.getString("nome"),rs.getString("nacionalidade"), rs.getString("estado_mora"));
-                
-                //Armazena o novo filme no vetor
-                res.addElement(p);
-            }
-            
-            }catch(SQLException e){
-            e.printStackTrace();
-        }
-        
-        Vector array_aux_pessoa = res; 
-        Object[] aux = array_aux_pessoa.toArray(new Pessoa[array_aux_pessoa.size()]);
-        Pessoa[] pesquisa_pessoa = Arrays.copyOf(aux, aux.length, Pessoa[].class);
+         <%
+            Vector array_aux_Pessoas = (Vector) request.getAttribute("pesquisa_Pessoas");
+            if(array_aux_Pessoas != null){
+                Object[] aux = array_aux_Pessoas.toArray(new Pessoa[array_aux_Pessoas.size()]);
+                Pessoa[] pesquisa_pessoa = Arrays.copyOf(aux, aux.length,Pessoa[].class);      
         %>
         
         <div class="cont">
@@ -114,7 +83,7 @@
                     </thead>
                     <tbody>
                         <%
-                            for(int i = 0 ; i < array_aux_pessoa.size(); i++){
+                            for(int i = 0 ; i < array_aux_Pessoas.size(); i++){
                         %>
                             <tr onclick='teste("<%out.print(pesquisa_pessoa[i].getRne());%>")'>
                                 <td><%out.print(pesquisa_pessoa[i].getRne());%></td>
@@ -128,6 +97,7 @@
 
                     </tbody>
                 </table>
+                <%}%>
                         
                 <script type='text/javascript'>
                     function teste(rne){

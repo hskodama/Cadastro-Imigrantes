@@ -22,7 +22,7 @@
                 <li><a class="nav-link" href="index.jsp">Home</a></li>
                 <li><a class="nav-link" href="Pessoas.jsp">Pessoas</a></li>
                 <li><a class="nav-link" href="Vistos.jsp">Vistos</a></li>
-                <li><a class="active" href="Tipo_Visto.jsp">Tipos de Vistos</a></li>
+                <li><a class="nav-link" href="Tipo_Visto.jsp">Tipos de Vistos</a></li>
                 <li><a class="nav-link" href="Pesquisa.jsp">Pesquisas</a></li>
                 <li><a class="nav-link" href="Visualizacao.jsp">Visualização</a></li>
             </ul>

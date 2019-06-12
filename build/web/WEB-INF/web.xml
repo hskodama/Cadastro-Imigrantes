@@ -8,6 +8,14 @@
         <servlet-name>Visualiza</servlet-name>
         <servlet-class>controllers.Visualiza</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Pessoas</servlet-name>
+        <servlet-class>controllers.Pessoas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Vistos</servlet-name>
+        <servlet-class>controllers.Vistos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Pesquisa</servlet-name>
         <url-pattern>/Pesquisa</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>Visualiza</servlet-name>
         <url-pattern>/Visualiza</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Pessoas</servlet-name>
+        <url-pattern>/Pessoas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Vistos</servlet-name>
+        <url-pattern>/Vistos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
