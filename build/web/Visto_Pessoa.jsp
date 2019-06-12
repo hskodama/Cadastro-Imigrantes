@@ -132,7 +132,6 @@
                     <li >Passaporte: <%out.print(pesquisa_vp[0].getPassaporte());%></li>
                     <li >Nome do Pai: <%out.print(pesquisa_vp[0].getNome_pai());%></li>
                     <li >Nacionalidade: <%out.print(pesquisa_vp[0].getNacionalidade());%></li>
-                    <li >Data de Expiração: <%out.print(pesquisa_vp[0].getData_expir_passaporte());%></li>
                 </ul>
             </div>
         </section>
