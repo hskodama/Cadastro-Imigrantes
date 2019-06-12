@@ -21,7 +21,10 @@
         <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         
         <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
-        
+        <script>$(document).ready(function(){
+            $('#table_vistos').DataTable();
+            });
+        </script>
         <script>
             function visu(){
             //$.post("Vistos");
@@ -85,7 +88,7 @@
                         <%
                             for(int i = 0 ; i < array_aux_Vistos.size() ; i++){
                         %>
-                            <tr onclick='teste("<%out.print(pesquisa_visto[i].getRne());%>")'>
+                            <tr onclick='rne("<%out.print(pesquisa_visto[i].getRne());%>")'>
                                 <td><%out.print(pesquisa_visto[i].getRne());%></td>
                                 <td><%out.print(pesquisa_visto[i].getClassificacao());%></td>
                                 <td><%out.print(pesquisa_visto[i].getDataExped());%></td>
@@ -104,7 +107,7 @@
         </div>
     	<script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
         <script type='text/javascript'>
-            function teste(rne){
+            function rne(rne){
                 window.location.replace("/TrabalhoIntegrado/Visto_Pessoa.jsp?rne=" + rne);
             }
         </script> 
